@@ -55,6 +55,30 @@ const i18n = {
         li2: "Administracja serwerami i stacjami roboczymi",
         li3: "Kopie zapasowe, odzyskiwanie i ciągłość działania",
       },
+      now: {
+        title: "Usługi dostępne od ręki",
+        card1: {
+          title: "Security check dla małych firm / freelancerów",
+          desc: "Sprawdzę podstawowe ryzyka na laptopie i sieci domowej.",
+          li1: "Hardening Windows 10/11",
+          li2: "Ustawienia Microsoft Defender",
+          li3: "Zapora, aktualizacje i podstawowy audyt bezpieczeństwa",
+        },
+        card2: {
+          title: "Small Business Cyber Hygiene Setup",
+          desc: "Praktyczne wdrożenie nawyków bezpieczeństwa dla małych zespołów.",
+          li1: "MFA i menedżer haseł",
+          li2: "Bezpieczne kopie zapasowe",
+          li3: "Świadomość phishingu",
+        },
+        card3: {
+          title: "Home network security review",
+          desc: "Przegląd bezpieczeństwa sieci domowej i podstawowa konfiguracja.",
+          li1: "Konfiguracja routera",
+          li2: "Szyfrowanie Wi-Fi",
+          li3: "Sieć gościnna",
+        },
+      },
     },
     experience: {
       title: "Doświadczenie i kwalifikacje",
@@ -160,6 +184,30 @@ const i18n = {
         li1: "Ticket handling and SLA support for companies",
         li2: "Server and workstation administration",
         li3: "Backups, recovery, and business continuity",
+      },
+      now: {
+        title: "Services available right now",
+        card1: {
+          title: "Security check for small businesses / freelancers",
+          desc: "I will review basic risks on a laptop and home network.",
+          li1: "Windows 10/11 hardening",
+          li2: "Microsoft Defender settings",
+          li3: "Firewall, updates, and basic security audit",
+        },
+        card2: {
+          title: "Small Business Cyber Hygiene Setup",
+          desc: "Practical security hygiene setup for small teams.",
+          li1: "MFA and password manager",
+          li2: "Secure backups",
+          li3: "Phishing awareness",
+        },
+        card3: {
+          title: "Home network security review",
+          desc: "Home network security review and baseline configuration.",
+          li1: "Router configuration",
+          li2: "Wi-Fi encryption",
+          li3: "Guest network",
+        },
       },
     },
     experience: {
