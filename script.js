@@ -64,21 +64,21 @@ const i18n = {
       now: {
         title: "Usługi dostępne od ręki",
         card1: {
-          title: "Security check dla małych firm / freelancerów",
+          title: "Przegląd bezpieczeństwa dla małych firm i freelancerów",
           desc: "Sprawdzę podstawowe ryzyka na laptopie i sieci domowej.",
-          li1: "Hardening Windows 10/11",
+          li1: "Utwardzanie Windows 10/11",
           li2: "Ustawienia Microsoft Defender",
           li3: "Zapora, aktualizacje i podstawowy audyt bezpieczeństwa",
         },
         card2: {
-          title: "Small Business Cyber Hygiene Setup",
+          title: "Pakiet cyber hygiene dla małych firm",
           desc: "Praktyczne wdrożenie nawyków bezpieczeństwa dla małych zespołów.",
           li1: "MFA i menedżer haseł",
           li2: "Bezpieczne kopie zapasowe",
           li3: "Świadomość phishingu",
         },
         card3: {
-          title: "Home network security review",
+          title: "Przegląd bezpieczeństwa sieci domowej",
           desc: "Przegląd bezpieczeństwa sieci domowej i podstawowa konfiguracja.",
           li1: "Konfiguracja routera",
           li2: "Szyfrowanie Wi-Fi",
