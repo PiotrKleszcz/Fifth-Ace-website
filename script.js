@@ -18,6 +18,7 @@ const i18n = {
     },
     nav: {
       services: "Usługi",
+      guides: "Strefa usług",
       experience: "Doświadczenie",
       process: "Proces",
       contact: "Kontakt",
@@ -42,6 +43,7 @@ const i18n = {
         li1: "Ocena ryzyka i zgodności",
         li2: "Wzmacnianie zabezpieczeń systemów i sieci",
         li3: "Programy świadomości bezpieczeństwa",
+        cta: "Zobacz stronę usługi",
       },
       card2: {
         title: "Testy penetracyjne",
@@ -49,6 +51,7 @@ const i18n = {
         li1: "Pentesty aplikacji webowych, API i mobilnych",
         li2: "Testy infrastruktury wewnętrznej i zewnętrznej",
         li3: "Retesty po wdrożeniu poprawek",
+        cta: "Zobacz stronę usługi",
       },
       card3: {
         title: "Wsparcie IT",
@@ -56,6 +59,7 @@ const i18n = {
         li1: "Obsługa zgłoszeń i SLA dla firm",
         li2: "Administracja serwerami i stacjami roboczymi",
         li3: "Kopie zapasowe, odzyskiwanie i ciągłość działania",
+        cta: "Zobacz stronę usługi",
       },
       now: {
         title: "Usługi dostępne od ręki",
@@ -80,6 +84,41 @@ const i18n = {
           li2: "Szyfrowanie Wi-Fi",
           li3: "Sieć gościnna",
         },
+      },
+    },
+    seoHub: {
+      title: "Strefa usług i porad bezpieczeństwa",
+      intro:
+        "Przygotowaliśmy osobne strony usług, żeby łatwiej było znaleźć Fifth Ace po konkretnych hasłach takich jak audyt bezpieczeństwa, pentesty, wsparcie IT czy zabezpieczenie laptopa firmowego.",
+      card1: {
+        kicker: "Cyberbezpieczeństwo",
+        title: "Cyberbezpieczeństwo dla małych firm",
+        desc: "Strona o ochronie kont, poczty, laptopów, backupów i podstawowych procedurach bezpieczeństwa.",
+        cta: "Przejdź do strony",
+      },
+      card2: {
+        kicker: "Audyt bezpieczeństwa",
+        title: "Audyt bezpieczeństwa i ocena ryzyka",
+        desc: "Zakres audytu, najczęstsze luki i plan działań dla małej firmy lub freelancera.",
+        cta: "Przejdź do strony",
+      },
+      card3: {
+        kicker: "Pentesty",
+        title: "Testy penetracyjne aplikacji i sieci",
+        desc: "Informacje o testach aplikacji webowych, API, sieci wewnętrznej i retestach po poprawkach.",
+        cta: "Przejdź do strony",
+      },
+      card4: {
+        kicker: "Wsparcie IT",
+        title: "Wsparcie IT dla firm i zespołów",
+        desc: "Administracja, helpdesk, utrzymanie stacji roboczych, kopie zapasowe i ciągłość działania.",
+        cta: "Przejdź do strony",
+      },
+      card5: {
+        kicker: "Laptop i Wi-Fi",
+        title: "Zabezpieczenie laptopa i sieci Wi-Fi",
+        desc: "Hardening Windows, router, MFA, Defender i szybki security check dla małego biznesu lub domu.",
+        cta: "Przejdź do strony",
       },
     },
     experience: {
@@ -171,6 +210,7 @@ const i18n = {
     },
     nav: {
       services: "Services",
+      guides: "Service pages",
       experience: "Experience",
       process: "Process",
       contact: "Contact",
@@ -195,6 +235,7 @@ const i18n = {
         li1: "Risk and compliance assessment",
         li2: "System and network hardening",
         li3: "Security awareness programs",
+        cta: "Open service page",
       },
       card2: {
         title: "Penetration testing",
@@ -202,6 +243,7 @@ const i18n = {
         li1: "Web, API, and mobile pentests",
         li2: "Internal and external infrastructure testing",
         li3: "Re-tests after remediation",
+        cta: "Open service page",
       },
       card3: {
         title: "IT support",
@@ -209,6 +251,7 @@ const i18n = {
         li1: "Ticket handling and SLA support for companies",
         li2: "Server and workstation administration",
         li3: "Backups, recovery, and business continuity",
+        cta: "Open service page",
       },
       now: {
         title: "Services available right now",
@@ -233,6 +276,41 @@ const i18n = {
           li2: "Wi-Fi encryption",
           li3: "Guest network",
         },
+      },
+    },
+    seoHub: {
+      title: "Service pages and security guides",
+      intro:
+        "We created dedicated service pages so Fifth Ace can be found more easily for search terms such as security audit, pentesting, IT support, or laptop security hardening.",
+      card1: {
+        kicker: "Cybersecurity",
+        title: "Cybersecurity for small businesses",
+        desc: "A page focused on account security, email protection, laptops, backups, and baseline security processes.",
+        cta: "Open page",
+      },
+      card2: {
+        kicker: "Security audit",
+        title: "Security audit and risk assessment",
+        desc: "Audit scope, common weaknesses, and an action plan for a small business or freelancer.",
+        cta: "Open page",
+      },
+      card3: {
+        kicker: "Pentesting",
+        title: "Penetration testing for applications and networks",
+        desc: "Details about web app, API, internal network testing, and re-tests after remediation.",
+        cta: "Open page",
+      },
+      card4: {
+        kicker: "IT support",
+        title: "IT support for companies and teams",
+        desc: "Administration, helpdesk, workstation maintenance, backups, and business continuity support.",
+        cta: "Open page",
+      },
+      card5: {
+        kicker: "Laptop and Wi-Fi",
+        title: "Laptop and Wi-Fi security hardening",
+        desc: "Windows hardening, router review, MFA, Defender, and a fast security check for home or small business environments.",
+        cta: "Open page",
       },
     },
     experience: {

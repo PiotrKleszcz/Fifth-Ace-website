@@ -5,4 +5,29 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://piotrkleszcz.github.io/Fifth-Ace-website/cyberbezpieczenstwo-dla-malych-firm.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://piotrkleszcz.github.io/Fifth-Ace-website/audyt-bezpieczenstwa.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://piotrkleszcz.github.io/Fifth-Ace-website/testy-penetracyjne.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://piotrkleszcz.github.io/Fifth-Ace-website/wsparcie-it-dla-firm.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://piotrkleszcz.github.io/Fifth-Ace-website/zabezpieczenie-laptopa-i-wifi.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>
