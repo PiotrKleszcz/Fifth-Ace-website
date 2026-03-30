@@ -9,9 +9,9 @@ const translatableNodes = document.querySelectorAll("[data-i18n]");
 const i18n = {
   pl: {
     meta: {
-      title: "Fifth Ace | Cyberbezpieczeństwo i Pentesty",
+      title: "Fifth Ace | Cyberbezpieczeństwo, Pentesty i Audyty",
       description:
-        "Fifth Ace - cyberbezpieczeństwo, testy penetracyjne oraz profesjonalne wsparcie IT dla firm.",
+        "Fifth Ace - cyberbezpieczeństwo, audyty bezpieczeństwa, testy penetracyjne oraz wsparcie IT dla małych firm i freelancerów.",
     },
     ui: {
       langLabel: "Wybór języka",
@@ -29,6 +29,8 @@ const i18n = {
         "Fifth Ace wspiera organizacje w wykrywaniu luk bezpieczeństwa, przeprowadzaniu testów penetracyjnych i utrzymaniu bezpiecznego, stabilnego środowiska IT.",
       lead2:
         "Zespół Fifth Ace łączy praktyczne wsparcie IT z intensywnym rozwojem kompetencji w obszarze bezpieczeństwa systemów i sieci.",
+      lead3:
+        "Pomagamy w takich obszarach jak audyt bezpieczeństwa, testy penetracyjne, zabezpieczanie laptopów firmowych, ochrona sieci Wi-Fi, MFA, kopie zapasowe i cyber hygiene dla małych organizacji.",
       ctaConsult: "Umów konsultację",
       ctaOffer: "Zobacz ofertę",
     },
@@ -128,6 +130,27 @@ const i18n = {
         desc: "Rekomendacje, wsparcie i ponowny test potwierdzający poprawki.",
       },
     },
+    faq: {
+      title: "FAQ: cyberbezpieczeństwo dla małych firm i freelancerów",
+      intro:
+        "Ta sekcja odpowiada na pytania, które klienci najczęściej wpisują w Google, gdy szukają praktycznego wsparcia w obszarze cyberbezpieczeństwa.",
+      q1: {
+        title: "Czym jest audyt bezpieczeństwa dla małej firmy?",
+        desc: "Audyt bezpieczeństwa pomaga sprawdzić laptopy, konta, kopie zapasowe, dostęp do poczty, konfigurację Wi-Fi i podstawowe ryzyka w firmie, zanim pojawi się incydent.",
+      },
+      q2: {
+        title: "Kiedy warto zamówić testy penetracyjne?",
+        desc: "Testy penetracyjne warto wykonać przed wdrożeniem nowej aplikacji, po większych zmianach w sieci lub wtedy, gdy firma chce realnie sprawdzić odporność systemów i usług.",
+      },
+      q3: {
+        title: "Czy Fifth Ace pomaga zabezpieczyć Windows, router i domowe Wi-Fi?",
+        desc: "Tak. Fifth Ace oferuje hardening Windows 10 i 11, przegląd konfiguracji routera, ustawienia Microsoft Defender, podstawowy firewall review oraz pomoc w budowaniu bezpiecznych kopii zapasowych.",
+      },
+      q4: {
+        title: "Jakie usługi cyberbezpieczeństwa są dostępne od ręki?",
+        desc: "Najszybciej można rozpocząć security check dla laptopa firmowego, przegląd bezpieczeństwa sieci domowej, cyber hygiene setup dla małego zespołu oraz podstawowy audyt zabezpieczeń.",
+      },
+    },
     contact: {
       title: "Potrzebujesz partnera od bezpieczeństwa?",
       desc: "Skontaktuj się z Fifth Ace i zaplanujmy bezpieczniejszą infrastrukturę.",
@@ -139,9 +162,9 @@ const i18n = {
   },
   en: {
     meta: {
-      title: "Fifth Ace | Cybersecurity and Pentesting",
+      title: "Fifth Ace | Cybersecurity, Pentesting and Security Audits",
       description:
-        "Fifth Ace - cybersecurity, penetration testing and professional IT support for businesses.",
+        "Fifth Ace - cybersecurity, security audits, penetration testing and IT support for small businesses and freelancers.",
     },
     ui: {
       langLabel: "Language switch",
@@ -159,6 +182,8 @@ const i18n = {
         "Fifth Ace supports organizations in identifying security gaps, conducting penetration tests, and maintaining a secure, stable IT environment.",
       lead2:
         "The Fifth Ace team combines practical IT support with continuous growth in systems and network security expertise.",
+      lead3:
+        "We help with security audits, penetration testing, laptop hardening, Wi-Fi protection, MFA, backup strategy and cyber hygiene for small organizations.",
       ctaConsult: "Book a consultation",
       ctaOffer: "View services",
     },
@@ -256,6 +281,27 @@ const i18n = {
       step3: {
         title: "Implementation",
         desc: "Recommendations, support, and a follow-up test confirming the fixes.",
+      },
+    },
+    faq: {
+      title: "FAQ: cybersecurity for small businesses and freelancers",
+      intro:
+        "This section answers questions that people often type into Google when they look for practical cybersecurity support.",
+      q1: {
+        title: "What is a security audit for a small business?",
+        desc: "A security audit helps review laptops, accounts, backups, email access, Wi-Fi configuration, and baseline risks before an incident happens.",
+      },
+      q2: {
+        title: "When should you order penetration testing?",
+        desc: "Penetration testing is worth scheduling before a new application launch, after major network changes, or whenever a company wants to verify the resilience of systems and services.",
+      },
+      q3: {
+        title: "Can Fifth Ace help secure Windows, a router, and home Wi-Fi?",
+        desc: "Yes. Fifth Ace offers Windows 10 and 11 hardening, router configuration review, Microsoft Defender settings, baseline firewall review, and support for building secure backups.",
+      },
+      q4: {
+        title: "Which cybersecurity services are available right away?",
+        desc: "The fastest services to start are a laptop security check, a home network security review, a cyber hygiene setup for a small team, and a baseline security audit.",
       },
     },
     contact: {

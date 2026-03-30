@@ -310,6 +310,11 @@ h1 {
   font-size: 1.08rem;
 }
 
+.lead-accent,
+.section-intro {
+  color: #c7d9f4;
+}
+
 .hero-cta {
   display: flex;
   gap: 12px;
@@ -458,6 +463,29 @@ h1 {
   color: var(--muted);
 }
 
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.faq-item {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+  background: linear-gradient(145deg, rgba(16, 27, 45, 0.82), rgba(9, 16, 29, 0.86));
+  box-shadow: var(--shadow);
+}
+
+.faq-item h3 {
+  margin: 0 0 10px;
+}
+
+.faq-item p {
+  margin: 0;
+  color: var(--muted);
+}
+
 .cta {
   text-align: center;
   margin: 30px auto 16px;
@@ -555,7 +583,8 @@ h1 {
 @media (max-width: 960px) {
   .cards,
   .steps,
-  .experience-grid {
+  .experience-grid,
+  .faq-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -576,7 +605,8 @@ h1 {
 
   .cards,
   .steps,
-  .experience-grid {
+  .experience-grid,
+  .faq-grid {
     grid-template-columns: 1fr;
   }
 

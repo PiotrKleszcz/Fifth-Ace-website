@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://piotrkleszcz.github.io/Fifth-Ace-website/sitemap.xml
