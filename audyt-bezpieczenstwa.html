@@ -60,6 +60,13 @@
       <a href="index.html" class="brand">
         <span class="brand-mark" aria-hidden="true">
           <img src="logo.jpeg" alt="Logo Fifth Ace" class="brand-avatar-img" />
+          <span class="brand-avatar-fallback avatar avatar-v1">
+            <span class="avatar-card"></span>
+            <span class="avatar-core"></span>
+            <span class="avatar-lock"></span>
+            <span class="avatar-dot avatar-dot-a"></span>
+            <span class="avatar-dot avatar-dot-b"></span>
+          </span>
         </span>
         <span class="brand-name">Fifth Ace</span>
       </a>
@@ -72,7 +79,7 @@
     </header>
 
     <main class="service-page">
-      <section class="service-hero container">
+      <section class="service-hero container reveal">
         <p class="breadcrumbs">
           <a href="index.html">Strona główna</a> / Audyt bezpieczeństwa
         </p>
@@ -95,7 +102,7 @@
       </section>
 
       <section class="section container service-grid">
-        <article class="service-panel">
+        <article class="service-panel reveal">
           <h2>Jak wygląda audyt bezpieczeństwa</h2>
           <p>
             Audyt nie polega wyłącznie na sprawdzeniu pojedynczego urządzenia.
@@ -119,7 +126,7 @@
           </div>
         </article>
 
-        <aside class="service-sidebar">
+        <aside class="service-sidebar reveal">
           <h2>Kiedy audyt ma największy sens</h2>
           <ul>
             <li>Przed wdrożeniem nowych narzędzi lub zmianą sposobu pracy.</li>
@@ -132,7 +139,7 @@
       </section>
 
       <section class="section container service-stack">
-        <article class="service-list">
+        <article class="service-list reveal">
           <h2>Co może być objęte audytem</h2>
           <ul>
             <li>Laptopy firmowe i komputery używane do pracy.</li>
@@ -143,7 +150,7 @@
           </ul>
         </article>
 
-        <article class="service-list">
+        <article class="service-list reveal">
           <h2>Co dostajesz po audycie</h2>
           <p>
             Efektem współpracy jest czytelna lista problemów oraz kolejność
@@ -158,7 +165,7 @@
           </ul>
         </article>
 
-        <article class="service-related">
+        <article class="service-related reveal">
           <h2>Powiązane usługi</h2>
           <div class="related-links">
             <a class="related-link" href="cyberbezpieczenstwo-dla-malych-firm.html"
@@ -177,7 +184,7 @@
         </article>
       </section>
 
-      <section class="section container cta">
+      <section class="section container cta reveal">
         <h2>Potrzebujesz audytu bezpieczeństwa?</h2>
         <p>
           Opisz swoją firmę, używane narzędzia i największe obawy. To wystarczy,
@@ -197,19 +204,31 @@
             target="_blank"
             rel="noopener noreferrer"
             aria-label="YouTube"
-            >YT</a
           >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M23.5 7.2a3 3 0 0 0-2.1-2.1C19.5 4.6 12 4.6 12 4.6s-7.5 0-9.4.5A3 3 0 0 0 .5 7.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-4.8zM9.6 15.3V8.7L15.8 12z"
+              />
+            </svg>
+          </a>
           <a
             class="social-link social-instagram"
             href="https://www.instagram.com/fifthace.sec/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            >IG</a
           >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 1.8A3.7 3.7 0 0 0 3.8 7.5v9a3.7 3.7 0 0 0 3.7 3.7h9a3.7 3.7 0 0 0 3.7-3.7v-9a3.7 3.7 0 0 0-3.7-3.7zm9.8 1.5a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.8A3.2 3.2 0 1 0 12 15.2 3.2 3.2 0 0 0 12 8.8z"
+              />
+            </svg>
+          </a>
         </div>
       </div>
-      <p>© Fifth Ace. Wszelkie prawa zastrzeżone.</p>
+      <p>© <span data-current-year></span> Fifth Ace. Wszelkie prawa zastrzeżone.</p>
     </footer>
+
+    <script src="service-pages.js"></script>
   </body>
 </html>
