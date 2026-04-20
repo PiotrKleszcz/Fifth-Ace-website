@@ -1,48 +1,47 @@
 # Fifth Ace Website
 
-Statyczna strona internetowa marki **Fifth Ace**, prezentująca ofertę z obszaru cyberbezpieczeństwa, testów penetracyjnych oraz wsparcia IT dla firm i klientów indywidualnych.
-
-Projekt został zbudowany w czystym HTML, CSS i JavaScript, dzięki czemu jest lekki, szybki i prosty we wdrożeniu jako landing page lub strona firmowa.
+Dwujęzyczna strona firmowa **Fifth Ace** z prawdziwym backendem do kont klientów, logowania i publikowania opinii.
 
 ![Fifth Ace logo](./logo.jpeg)
 
-## O projekcie
+## Co się zmieniło
 
-Strona pełni rolę nowoczesnej wizytówki online dla Fifth Ace. Zawiera sekcje prezentujące:
+Projekt nie jest już wyłącznie statycznym landing page'em.
 
-- główną ofertę usług,
-- doświadczenie i kompetencje,
-- proces współpracy,
-- dane kontaktowe,
-- linki do kanałów społecznościowych.
+Teraz zawiera:
 
-Witryna została przygotowana w dwóch wersjach językowych: **polskiej** i **angielskiej**.
+- backend WSGI w Pythonie,
+- bazę `SQLite` dla użytkowników, sesji i opinii,
+- bezpieczne hashowanie haseł przez `PBKDF2-HMAC-SHA256`,
+- sesje w ciasteczku `HttpOnly` z `SameSite=Strict`,
+- rejestrację i logowanie klientów,
+- formularz opinii zapisujący dane po stronie serwera zamiast w `localStorage`.
 
-## Najważniejsze funkcje
-
-- responsywny layout dopasowany do desktopu i urządzeń mobilnych,
-- przełącznik języka `PL / EN`,
-- dynamiczna podmiana treści bez przeładowania strony,
-- zapamiętywanie wybranego języka w `localStorage`,
-- animacje wejścia sekcji przy scrollowaniu z użyciem `IntersectionObserver`,
-- fallback dla logo, jeśli obraz nie zostanie wczytany,
-- sekcja kontaktowa z bezpośrednim linkiem `mailto`,
-- integracja z profilami YouTube i Instagram.
+Frontend nadal zachowuje wersję `PL / EN` i dotychczasowy wygląd strony.
 
 ## Stack technologiczny
 
 - `HTML5`
 - `CSS3`
 - `Vanilla JavaScript`
-- `Google Fonts` (`Manrope`, `Orbitron`)
+- `Python 3`
+- `SQLite`
+
+Projekt nie wymaga zewnętrznych paczek Pythona.
 
 ## Struktura projektu
 
 ```text
 .
+├── app.py
+├── wsgi.py
+├── data/
+│   └── .gitkeep
 ├── index.html
 ├── styles.css
 ├── script.js
+├── service-pages.js
+├── *.html
 ├── logo.jpeg
 ├── README.md
 └── README.pl.md
@@ -50,61 +49,77 @@ Witryna została przygotowana w dwóch wersjach językowych: **polskiej** i **an
 
 ## Uruchomienie lokalne
 
-Ponieważ jest to strona statyczna, projekt można uruchomić bardzo prosto:
-
-1. Sklonuj repozytorium:
+Uruchom serwer aplikacji:
 
 ```bash
-git clone <adres-repozytorium>
+python3 app.py
 ```
 
-2. Przejdź do katalogu projektu:
+Następnie wejdź na adres:
 
-```bash
-cd fifth-ace-website
+```text
+http://127.0.0.1:8000
 ```
 
-3. Otwórz plik `index.html` w przeglądarce
+Przy pierwszym uruchomieniu aplikacja sama utworzy bazę danych w:
 
-albo uruchom prosty serwer lokalny, na przykład:
-
-```bash
-python3 -m http.server 8000
+```text
+data/fifth_ace.db
 ```
 
-Następnie wejdź na adres `http://localhost:8000`.
+## Zmienne środowiskowe
+
+Opcjonalne ustawienia:
+
+- `PORT` - port lokalnego serwera, domyślnie `8000`
+- `FIFTH_ACE_DB_PATH` - własna ścieżka do bazy `SQLite`
+- `FIFTH_ACE_SESSION_TTL_SECONDS` - czas życia sesji w sekundach
+- `FIFTH_ACE_PBKDF2_ITERATIONS` - koszt hashowania haseł
+
+## Endpointy API
+
+- `GET /api/health`
+- `GET /api/session`
+- `POST /api/register`
+- `POST /api/login`
+- `POST /api/logout`
+- `GET /api/reviews`
+- `POST /api/reviews`
 
 ## Wdrożenie
 
-Projekt nadaje się do wdrożenia jako statyczna strona na platformach takich jak:
+Ta wersja wymaga hostingu z obsługą Pythona. **GitHub Pages już się do tego nie nadaje**, bo logowanie i zapis do bazy wymagają działającego serwera.
 
-- GitHub Pages
-- Netlify
-- Vercel
+Przykładowe miejsca do wdrożenia:
 
-Nie wymaga procesu buildowania ani dodatkowych zależności.
+- PythonAnywhere
+- Render
+- Railway
+- Fly.io
+- VPS z `gunicorn`, `uwsgi` albo innym serwerem WSGI
 
-## Co zawiera strona
+Dla hostingu WSGI użyj:
 
-- `Hero section` z głównym komunikatem marki,
-- sekcję `Kluczowe usługi`,
-- sekcję `Usługi dostępne od ręki`,
-- sekcję `Doświadczenie i kwalifikacje`,
-- sekcję `Jak pracujemy`,
-- sekcję kontaktową z adresem `fifthace@gmx.com`,
-- stopkę z linkami społecznościowymi.
+```python
+from app import application
+```
 
-## Możliwe dalsze rozwinięcia
+albo wskaż plik `wsgi.py`.
 
-- dodanie formularza kontaktowego,
-- podpięcie analityki,
-- rozbudowa SEO o Open Graph i social preview,
-- wydzielenie treści tłumaczeń do osobnych plików,
-- dodanie CMS lub panelu do edycji treści.
+## Zaimplementowane podstawy bezpieczeństwa
+
+- hasła są hashowane zamiast przechowywane jawnie,
+- sesje są przechowywane po stronie serwera w bazie danych,
+- ciasteczko logowania jest `HttpOnly`,
+- polityka ciasteczka to `SameSite=Strict`,
+- dane wejściowe do rejestracji, logowania i opinii są walidowane,
+- endpoint dodawania opinii jest chroniony i wymaga zalogowania.
+
+## Ważna uwaga
+
+W środowisku produkcyjnym pod HTTPS ciasteczko sesji będzie automatycznie oznaczane jako `Secure`, jeśli aplikacja działa przez HTTPS albo stoi za proxy przekazującym nagłówek `X-Forwarded-Proto: https`.
 
 ## Kontakt
-
-W sprawie współpracy lub rozwoju projektu:
 
 - e-mail: `fifthace@gmx.com`
 - YouTube: [@FifthAce-sec](https://www.youtube.com/@FifthAce-sec)

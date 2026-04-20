@@ -102,6 +102,7 @@
         <a href="#strefa-seo" data-i18n="nav.guides">Strefa usług</a>
         <a href="#doswiadczenie" data-i18n="nav.experience">Doświadczenie</a>
         <a href="#proces" data-i18n="nav.process">Proces</a>
+        <a href="#opinie" data-i18n="nav.reviews">Opinie</a>
         <a href="#kontakt" data-i18n="nav.contact">Kontakt</a>
         <div class="lang-switch" aria-label="Wybór języka">
           <button class="lang-btn is-active" data-lang-switch="pl" type="button">
@@ -398,6 +399,253 @@
             <h3 data-i18n="process.step3.title">Wdrożenie</h3>
             <p data-i18n="process.step3.desc">Rekomendacje, wsparcie i ponowny test potwierdzający poprawki.</p>
           </div>
+        </div>
+      </section>
+
+      <section id="opinie" class="section container testimonials">
+        <div class="section-heading reveal">
+          <p class="eyebrow section-eyebrow" data-i18n="reviews.eyebrow">
+            Zweryfikowane opinie klientów
+          </p>
+          <h2 data-i18n="reviews.title">Komentarze i opinie po zrealizowanych usługach</h2>
+          <p class="section-intro" data-i18n="reviews.intro">
+            Klienci Fifth Ace mogą założyć konto, zalogować się i dodać komentarz po
+            zakończonej współpracy. Rejestracja zbiera podstawowe dane potrzebne do
+            weryfikacji opinii.
+          </p>
+        </div>
+
+        <div class="reviews-layout">
+          <div class="reviews-main reveal">
+            <div class="review-highlights">
+              <article class="review-highlight">
+                <strong data-i18n="reviews.highlight1.title">Logowanie wymagane</strong>
+                <p data-i18n="reviews.highlight1.desc">
+                  Formularz opinii odblokowuje się dopiero po zalogowaniu klienta.
+                </p>
+              </article>
+              <article class="review-highlight">
+                <strong data-i18n="reviews.highlight2.title">Podstawowe dane</strong>
+                <p data-i18n="reviews.highlight2.desc">
+                  Rejestracja zbiera imię, nazwisko, numer telefonu i adres email.
+                </p>
+              </article>
+              <article class="review-highlight">
+                <strong data-i18n="reviews.highlight3.title">Sekcja gotowa na wpisy</strong>
+                <p data-i18n="reviews.highlight3.desc">
+                  Każda nowa opinia pojawia się poniżej razem z oceną i zakresem usługi.
+                </p>
+              </article>
+            </div>
+
+            <div class="reviews-panel">
+              <div class="reviews-panel-head">
+                <h3 data-i18n="reviews.listTitle">Opublikowane komentarze</h3>
+                <p data-i18n="reviews.listDesc">
+                  Po dodaniu opinii zobaczysz ją poniżej razem z oceną i zakresem
+                  usługi.
+                </p>
+              </div>
+              <div id="reviewsList" class="reviews-list" aria-live="polite"></div>
+            </div>
+          </div>
+
+          <aside class="client-portal reveal">
+            <div class="portal-head">
+              <h3 data-i18n="reviews.portal.title">Strefa klienta</h3>
+              <p data-i18n="reviews.portal.desc">
+                Załóż konto klienta, zaloguj się i opisz przebieg współpracy z Fifth
+                Ace.
+              </p>
+              <p class="portal-privacy" data-i18n="reviews.portal.privacy">
+                Dane z formularza służą do identyfikacji klienta i przygotowania
+                procesu weryfikacji opinii.
+              </p>
+            </div>
+
+            <div class="portal-tabs" aria-label="Przełączanie formularzy strefy klienta">
+              <button
+                class="portal-tab is-active"
+                type="button"
+                data-portal-tab="register"
+                data-i18n="reviews.tabs.register"
+              >
+                Rejestracja
+              </button>
+              <button
+                class="portal-tab"
+                type="button"
+                data-portal-tab="login"
+                data-i18n="reviews.tabs.login"
+              >
+                Logowanie
+              </button>
+              <button
+                class="portal-tab"
+                type="button"
+                data-portal-tab="review"
+                data-i18n="reviews.tabs.review"
+              >
+                Dodaj opinię
+              </button>
+            </div>
+
+            <div id="portalSession" class="portal-session"></div>
+            <div id="portalFeedback" class="portal-feedback" role="status" aria-live="polite" hidden></div>
+
+            <form id="registerForm" class="portal-form" novalidate>
+              <div class="form-row">
+                <label class="form-field">
+                  <span data-i18n="reviews.register.firstName">Imię</span>
+                  <input
+                    type="text"
+                    name="firstName"
+                    autocomplete="given-name"
+                    required
+                  />
+                </label>
+                <label class="form-field">
+                  <span data-i18n="reviews.register.lastName">Nazwisko</span>
+                  <input
+                    type="text"
+                    name="lastName"
+                    autocomplete="family-name"
+                    required
+                  />
+                </label>
+              </div>
+
+              <div class="form-row">
+                <label class="form-field">
+                  <span data-i18n="reviews.register.phone">Nr telefonu</span>
+                  <input type="tel" name="phone" autocomplete="tel" required />
+                </label>
+                <label class="form-field">
+                  <span data-i18n="reviews.register.email">Adres email</span>
+                  <input type="email" name="email" autocomplete="email" required />
+                </label>
+              </div>
+
+              <label class="form-field">
+                <span data-i18n="reviews.register.password">Hasło</span>
+                <input
+                  type="password"
+                  name="password"
+                  autocomplete="new-password"
+                  minlength="8"
+                  required
+                />
+              </label>
+
+              <p class="form-note" data-i18n="reviews.register.hint">
+                Minimum 8 znaków. Konto służy do zalogowania przed dodaniem komentarza.
+              </p>
+
+              <button class="btn btn-primary" type="submit" data-i18n="reviews.register.submit">
+                Załóż konto
+              </button>
+            </form>
+
+            <form id="loginForm" class="portal-form" novalidate hidden>
+              <label class="form-field">
+                <span data-i18n="reviews.login.email">Adres email</span>
+                <input type="email" name="email" autocomplete="email" required />
+              </label>
+
+              <label class="form-field">
+                <span data-i18n="reviews.login.password">Hasło</span>
+                <input
+                  type="password"
+                  name="password"
+                  autocomplete="current-password"
+                  required
+                />
+              </label>
+
+              <p class="form-note" data-i18n="reviews.login.hint">
+                Zaloguj się tym adresem email i hasłem, które podałeś podczas
+                rejestracji.
+              </p>
+
+              <button class="btn btn-primary" type="submit" data-i18n="reviews.login.submit">
+                Zaloguj się
+              </button>
+            </form>
+
+            <form id="reviewForm" class="portal-form" novalidate hidden>
+              <fieldset id="reviewFieldset" class="review-fieldset" disabled>
+                <label class="form-field">
+                  <span data-i18n="reviews.review.service">Zakres usługi</span>
+                  <select name="service" required>
+                    <option value="" data-i18n="reviews.services.placeholder">
+                      Wybierz usługę
+                    </option>
+                    <option value="securityAudit" data-i18n="reviews.services.securityAudit">
+                      Audyt bezpieczeństwa
+                    </option>
+                    <option value="penetrationTest" data-i18n="reviews.services.penetrationTest">
+                      Testy penetracyjne
+                    </option>
+                    <option value="itSupport" data-i18n="reviews.services.itSupport">
+                      Wsparcie IT
+                    </option>
+                    <option value="laptopSecurity" data-i18n="reviews.services.laptopSecurity">
+                      Zabezpieczenie laptopa i Wi-Fi
+                    </option>
+                    <option value="cyberHygiene" data-i18n="reviews.services.cyberHygiene">
+                      Cyber hygiene dla małych firm
+                    </option>
+                  </select>
+                </label>
+
+                <div class="form-row">
+                  <label class="form-field">
+                    <span data-i18n="reviews.review.rating">Ocena współpracy</span>
+                    <select name="rating" required>
+                      <option value="" data-i18n="reviews.ratings.placeholder">
+                        Wybierz ocenę
+                      </option>
+                      <option value="5" data-i18n="reviews.ratings.five">
+                        5/5 - znakomicie
+                      </option>
+                      <option value="4" data-i18n="reviews.ratings.four">
+                        4/5 - bardzo dobrze
+                      </option>
+                      <option value="3" data-i18n="reviews.ratings.three">
+                        3/5 - dobrze
+                      </option>
+                      <option value="2" data-i18n="reviews.ratings.two">
+                        2/5 - poniżej oczekiwań
+                      </option>
+                      <option value="1" data-i18n="reviews.ratings.one">
+                        1/5 - wymaga poprawy
+                      </option>
+                    </select>
+                  </label>
+                </div>
+
+                <label class="form-field">
+                  <span data-i18n="reviews.review.comment">Komentarz klienta</span>
+                  <textarea name="comment" rows="5" minlength="30" required></textarea>
+                </label>
+
+                <p class="form-note" data-i18n="reviews.review.hint">
+                  Opinia będzie podpisana imieniem i inicjałem nazwiska.
+                </p>
+                <p class="form-note" data-i18n="reviews.review.commentHelp">
+                  Opisz krótko przebieg współpracy, komunikację i efekt usługi.
+                </p>
+
+                <button class="btn btn-primary" type="submit" data-i18n="reviews.review.submit">
+                  Opublikuj opinię
+                </button>
+              </fieldset>
+
+              <p id="reviewLockNote" class="review-lock-note">
+                Zaloguj się, aby odblokować formularz opinii.
+              </p>
+            </form>
+          </aside>
         </div>
       </section>
 
