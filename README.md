@@ -1,42 +1,31 @@
 # Fifth Ace Website
 
-A bilingual business website for **Fifth Ace** with a real backend for customer accounts, authentication, and review publishing.
+A bilingual static business website for **Fifth Ace**, ready to publish on GitHub Pages.
 
 ![Fifth Ace logo](./logo.jpeg)
 
-## What Changed
+## Highlights
 
-The project is no longer a static-only landing page.
-
-It now includes:
-
-- a Python WSGI backend,
-- a SQLite database for users, sessions, and reviews,
-- secure password hashing with `PBKDF2-HMAC-SHA256`,
-- `HttpOnly` session cookies with `SameSite=Strict`,
-- a customer registration and sign-in flow,
-- a review form backed by the server instead of `localStorage`.
-
-The website still keeps the existing bilingual frontend (`PL / EN`) and the original visual structure.
+- static `HTML`, `CSS`, and `Vanilla JavaScript`,
+- bilingual content (`PL / EN`),
+- landing page plus focused service pages,
+- review section powered by a static JSON file,
+- no backend, login flow, or database required.
 
 ## Tech Stack
 
 - `HTML5`
 - `CSS3`
 - `Vanilla JavaScript`
-- `Python 3`
-- `SQLite`
-
-No third-party Python packages are required.
+- `JSON`
 
 ## Project Structure
 
 ```text
 .
-├── app.py
-├── wsgi.py
 ├── data/
-│   └── .gitkeep
+│   ├── .gitkeep
+│   └── reviews.json
 ├── index.html
 ├── styles.css
 ├── script.js
@@ -47,12 +36,12 @@ No third-party Python packages are required.
 └── README.pl.md
 ```
 
-## Running Locally
+## Local Preview
 
-Start the application server:
+Run any static server in the project directory. For example:
 
 ```bash
-python3 app.py
+python3 -m http.server 8000
 ```
 
 Then open:
@@ -61,63 +50,40 @@ Then open:
 http://127.0.0.1:8000
 ```
 
-On first run, the app creates the SQLite database automatically in:
+## Reviews
 
-```text
-data/fifth_ace.db
+Published reviews live in [data/reviews.json](./data/reviews.json).
+
+Supported format:
+
+```json
+{
+  "reviews": [
+    {
+      "id": "review-1",
+      "authorName": "Anna K.",
+      "authorInitials": "AK",
+      "service": "securityAudit",
+      "rating": 5,
+      "comment": {
+        "pl": "Krótka opinia po polsku.",
+        "en": "Short review in English."
+      },
+      "updatedAt": "2026-04-22"
+    }
+  ]
+}
 ```
 
-## Environment Variables
+Notes:
 
-Optional settings:
+- `comment` can be either a plain string or an object with `pl` and `en` variants.
+- `service` should match one of: `securityAudit`, `penetrationTest`, `itSupport`, `laptopSecurity`, `cyberHygiene`.
+- reviews are displayed in descending date order.
 
-- `PORT` - local server port, default: `8000`
-- `FIFTH_ACE_DB_PATH` - custom SQLite database path
-- `FIFTH_ACE_SESSION_TTL_SECONDS` - session lifetime in seconds
-- `FIFTH_ACE_PBKDF2_ITERATIONS` - password hashing cost
+## Deployment
 
-## API Endpoints
-
-- `GET /api/health`
-- `GET /api/session`
-- `POST /api/register`
-- `POST /api/login`
-- `POST /api/logout`
-- `GET /api/reviews`
-- `POST /api/reviews`
-
-## Deployment Notes
-
-This version requires a Python-capable host. It is **not** suitable for GitHub Pages anymore because authentication and database writes need a server runtime.
-
-Good deployment targets:
-
-- PythonAnywhere
-- Render
-- Railway
-- Fly.io
-- VPS with `gunicorn`, `uwsgi`, or another WSGI server
-
-For WSGI hosting, use:
-
-```python
-from app import application
-```
-
-or point the host to `wsgi.py`.
-
-## Security Basics Included
-
-- hashed passwords instead of plain text,
-- server-side sessions stored in the database,
-- `HttpOnly` authentication cookie,
-- `SameSite=Strict` cookie policy,
-- input validation for registration, login, and reviews,
-- protected API routes for posting reviews.
-
-## Important Note
-
-For production under HTTPS, the session cookie will automatically be marked `Secure` when the app is served over HTTPS or behind a proxy that forwards `X-Forwarded-Proto: https`.
+This version is suitable for **GitHub Pages**. The repository already includes `.nojekyll`, so you can publish it as a regular static site.
 
 ## Contact
 

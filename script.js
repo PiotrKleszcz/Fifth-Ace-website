@@ -6,18 +6,8 @@ const langSwitchNode = document.querySelector(".lang-switch");
 const languageButtons = document.querySelectorAll("[data-lang-switch]");
 const translatableNodes = document.querySelectorAll("[data-i18n]");
 const reviewsListNode = document.getElementById("reviewsList");
-const portalTabs = document.querySelectorAll("[data-portal-tab]");
-const portalSessionNode = document.getElementById("portalSession");
-const portalFeedbackNode = document.getElementById("portalFeedback");
-const registerForm = document.getElementById("registerForm");
-const loginForm = document.getElementById("loginForm");
-const reviewForm = document.getElementById("reviewForm");
-const reviewFieldset = document.getElementById("reviewFieldset");
-const reviewLockNote = document.getElementById("reviewLockNote");
 
 let activeLanguage = "pl";
-let activePortalTab = "register";
-let activePortalMessage = null;
 
 const i18n = {
   pl: {
@@ -185,114 +175,62 @@ const i18n = {
     },
     reviews: {
       eyebrow: "Zweryfikowane opinie klientów",
-      title: "Komentarze i opinie po zrealizowanych usługach",
+      title: "Opinie po zakończonych usługach",
       intro:
-        "Klienci Fifth Ace mogą założyć konto, zalogować się i dodać komentarz po zakończonej współpracy. Rejestracja zbiera podstawowe dane potrzebne do weryfikacji opinii.",
+        "Ta wersja strony działa w pełni statycznie na GitHub Pages. Opinie publikujemy ręcznie po potwierdzonej współpracy, bez formularza logowania i bez zapisu danych po stronie serwera.",
       highlight1: {
-        title: "Logowanie wymagane",
-        desc: "Formularz opinii odblokowuje się dopiero po zalogowaniu klienta.",
+        title: "Ręczna weryfikacja",
+        desc: "Każda opinia trafia na stronę dopiero po potwierdzeniu zakresu współpracy i zgody na publikację.",
       },
       highlight2: {
-        title: "Podstawowe dane",
-        desc: "Rejestracja zbiera imię, nazwisko, numer telefonu i adres email.",
+        title: "Minimum danych",
+        desc: "Publikowane są tylko uzgodnione informacje, najczęściej imię i inicjał nazwiska albo nazwa firmy.",
       },
       highlight3: {
-        title: "Sekcja gotowa na wpisy",
-        desc: "Każda nowa opinia pojawia się poniżej razem z oceną i zakresem usługi.",
+        title: "Wersja zgodna z GitHub Pages",
+        desc: "Sekcja korzysta ze statycznego pliku z opiniami, więc cała strona pozostaje szybka i prosta we wdrożeniu.",
       },
-      listTitle: "Opublikowane komentarze",
+      listTitle: "Opublikowane opinie",
       listDesc:
-        "Po dodaniu opinii zobaczysz ją poniżej razem z oceną i zakresem usługi.",
+        "Opinie są ładowane ze statycznego pliku i aktualizowane ręcznie po zakończonej współpracy.",
       empty: {
         title: "Jeszcze nie ma opublikowanych opinii",
-        desc: "Sekcja jest gotowa na pierwsze komentarze od klientów, którzy zakończyli współpracę z Fifth Ace.",
+        desc: "Gdy pojawi się pierwsza zatwierdzona opinia, zobaczysz ją tutaj razem z oceną i zakresem usługi.",
       },
       loading: {
         title: "Ładowanie opinii",
-        desc: "Pobieramy opublikowane komentarze z bazy danych.",
+        desc: "Pobieramy opublikowane opinie ze statycznego pliku strony.",
       },
       loadError: {
-        title: "Nie udało się załadować opinii",
-        desc: "Sprawdź połączenie z serwerem i spróbuj ponownie za chwilę.",
+        title: "Nie udało się wczytać opinii",
+        desc: "Sprawdź, czy plik data/reviews.json jest dostępny na hostingu.",
       },
       portal: {
-        title: "Strefa klienta",
-        desc: "Załóż konto klienta, zaloguj się i opisz przebieg współpracy z Fifth Ace.",
+        title: "Jak dodać opinię",
+        desc: "Jeśli współpraca z Fifth Ace jest zakończona, możesz przesłać krótką opinię mailowo albo przez Instagram. Po potwierdzeniu dodam ją ręcznie do strony.",
         privacy:
-          "Dane z formularza są zapisywane w bazie danych i służą do identyfikacji klienta oraz weryfikacji opinii.",
-      },
-      tabs: {
-        register: "Rejestracja",
-        login: "Logowanie",
-        review: "Dodaj opinię",
-      },
-      register: {
-        firstName: "Imię",
-        lastName: "Nazwisko",
-        phone: "Nr telefonu",
-        email: "Adres email",
-        password: "Hasło",
-        submit: "Załóż konto",
-        hint: "Minimum 8 znaków. Konto służy do zalogowania przed dodaniem komentarza.",
-      },
-      login: {
-        email: "Adres email",
-        password: "Hasło",
-        submit: "Zaloguj się",
-        hint: "Zaloguj się tym adresem email i hasłem, które podałeś podczas rejestracji.",
-      },
-      review: {
-        service: "Zakres usługi",
-        rating: "Ocena współpracy",
-        comment: "Komentarz klienta",
-        submit: "Opublikuj opinię",
-        hint: "Opinia będzie podpisana imieniem i inicjałem nazwiska.",
-        commentHelp: "Opisz krótko przebieg współpracy, komunikację i efekt usługi.",
-        locked: "Zaloguj się, aby odblokować formularz opinii.",
-        ready: "Zalogowano jako {name}. Możesz dodać opinię.",
+          "Publikacja odbywa się bez publicznego formularza i bez zbierania haseł. Zakres widocznych danych ustalamy indywidualnie.",
+        step1: {
+          title: "Wyślij kilka zdań",
+          desc: "Opisz przebieg współpracy, komunikację i najważniejszy efekt usługi.",
+        },
+        step2: {
+          title: "Dodaj zakres usługi",
+          desc: "Wskaż, czy chodziło o audyt, pentest, wsparcie IT, zabezpieczenie laptopa i Wi-Fi albo cyber hygiene.",
+        },
+        step3: {
+          title: "Publikacja po akceptacji",
+          desc: "Po potwierdzeniu treści opinia trafia do pliku strony i pojawia się w tej sekcji.",
+        },
+        emailCta: "Wyślij opinię mailem",
+        instagramCta: "Napisz na Instagramie",
       },
       services: {
-        placeholder: "Wybierz usługę",
         securityAudit: "Audyt bezpieczeństwa",
         penetrationTest: "Testy penetracyjne",
         itSupport: "Wsparcie IT",
         laptopSecurity: "Zabezpieczenie laptopa i Wi-Fi",
         cyberHygiene: "Cyber hygiene dla małych firm",
-      },
-      ratings: {
-        placeholder: "Wybierz ocenę",
-        five: "5/5 - znakomicie",
-        four: "4/5 - bardzo dobrze",
-        three: "3/5 - dobrze",
-        two: "2/5 - poniżej oczekiwań",
-        one: "1/5 - wymaga poprawy",
-      },
-      session: {
-        label: "Status konta",
-        loggedOutTitle: "Niezalogowany klient",
-        loggedOutDesc: "Zarejestruj się albo zaloguj, aby napisać komentarz.",
-        loggedIn: "Zalogowano klienta: {name}",
-        email: "Email: {email}",
-      },
-      logout: "Wyloguj",
-      messages: {
-        fillAll: "Uzupełnij wszystkie wymagane pola.",
-        invalidEmail: "Podaj poprawny adres email.",
-        invalidPhone: "Podaj poprawny numer telefonu.",
-        shortPassword: "Hasło musi mieć co najmniej 8 znaków.",
-        userExists: "Konto z tym adresem email już istnieje.",
-        registerSuccess: "Konto zostało utworzone. Zalogowano klienta {name}.",
-        registerSaveError: "Nie udało się utworzyć konta po stronie serwera.",
-        loginSuccess: "Logowanie zakończone powodzeniem.",
-        loginError: "Nieprawidłowy email lub hasło.",
-        logoutSuccess: "Sesja klienta została zakończona.",
-        loginRequired: "Zaloguj się, aby dodać opinię.",
-        shortComment: "Komentarz powinien mieć co najmniej 30 znaków.",
-        reviewSuccess: "Opinia została dodana do sekcji komentarzy.",
-        reviewUpdated: "Zaktualizowano Twoją wcześniejszą opinię dla tej usługi.",
-        reviewSaveError: "Nie udało się zapisać opinii po stronie serwera.",
-        serverUnavailable: "Serwer chwilowo nie odpowiada. Spróbuj ponownie za moment.",
-        sessionExpired: "Sesja wygasła. Zaloguj się ponownie.",
       },
     },
     faq: {
@@ -490,113 +428,61 @@ const i18n = {
     },
     reviews: {
       eyebrow: "Verified client feedback",
-      title: "Comments and reviews after delivered services",
+      title: "Reviews after completed services",
       intro:
-        "Fifth Ace clients can create an account, sign in, and leave feedback after the collaboration is complete. Registration collects the basic details needed for review verification.",
+        "This version of the website runs as a fully static GitHub Pages site. Reviews are published manually after a confirmed collaboration, without a sign-in form and without storing client data on the server.",
       highlight1: {
-        title: "Login required",
-        desc: "The review form unlocks only after the client signs in.",
+        title: "Manual verification",
+        desc: "Each review is published only after the service scope and publication consent are confirmed.",
       },
       highlight2: {
-        title: "Basic details",
-        desc: "Registration collects first name, last name, phone number, and email address.",
+        title: "Minimal data",
+        desc: "Only agreed details are published, most often a first name and last-name initial or a company name.",
       },
       highlight3: {
-        title: "Section ready for entries",
-        desc: "Each new review appears below together with the rating and service scope.",
+        title: "GitHub Pages ready",
+        desc: "The section uses a static reviews file, so the whole site stays fast and simple to deploy.",
       },
-      listTitle: "Published comments",
-      listDesc: "Once a review is added, it will appear below with its rating and service scope.",
+      listTitle: "Published reviews",
+      listDesc: "Reviews are loaded from a static file and updated manually after completed work.",
       empty: {
         title: "There are no published reviews yet",
-        desc: "This section is ready for the first comments from clients who have completed their work with Fifth Ace.",
+        desc: "Once the first approved review is added, it will appear here together with its rating and service scope.",
       },
       loading: {
         title: "Loading reviews",
-        desc: "Published comments are being loaded from the database.",
+        desc: "Published reviews are being loaded from the website's static data file.",
       },
       loadError: {
         title: "Reviews could not be loaded",
-        desc: "Check the server connection and try again in a moment.",
+        desc: "Check whether the data/reviews.json file is available on the host.",
       },
       portal: {
-        title: "Client area",
-        desc: "Create a client account, sign in, and describe your experience working with Fifth Ace.",
+        title: "How to add a review",
+        desc: "If your work with Fifth Ace is complete, you can send a short review by email or Instagram. After confirmation, it will be added to the site manually.",
         privacy:
-          "The form details are stored in the database and used to identify the client and verify the review.",
-      },
-      tabs: {
-        register: "Register",
-        login: "Sign in",
-        review: "Add review",
-      },
-      register: {
-        firstName: "First name",
-        lastName: "Last name",
-        phone: "Phone number",
-        email: "Email address",
-        password: "Password",
-        submit: "Create account",
-        hint: "Minimum 8 characters. This account is used to sign in before posting a comment.",
-      },
-      login: {
-        email: "Email address",
-        password: "Password",
-        submit: "Sign in",
-        hint: "Sign in with the email address and password used during registration.",
-      },
-      review: {
-        service: "Service scope",
-        rating: "Collaboration rating",
-        comment: "Client comment",
-        submit: "Publish review",
-        hint: "The review will be signed with the first name and last-name initial.",
-        commentHelp: "Briefly describe the collaboration, communication, and service outcome.",
-        locked: "Sign in to unlock the review form.",
-        ready: "Signed in as {name}. You can add your review now.",
+          "Publication happens without a public form and without collecting passwords. The visible scope of personal details is agreed individually.",
+        step1: {
+          title: "Send a few sentences",
+          desc: "Describe the collaboration, communication, and the most important service outcome.",
+        },
+        step2: {
+          title: "Add the service scope",
+          desc: "Mention whether the work covered an audit, pentest, IT support, laptop and Wi-Fi security, or cyber hygiene.",
+        },
+        step3: {
+          title: "Publish after approval",
+          desc: "Once the wording is confirmed, the review is added to the site data file and appears in this section.",
+        },
+        emailCta: "Send a review by email",
+        instagramCta: "Message on Instagram",
       },
       services: {
-        placeholder: "Select a service",
         securityAudit: "Security audit",
         penetrationTest: "Penetration testing",
         itSupport: "IT support",
         laptopSecurity: "Laptop and Wi-Fi security",
         cyberHygiene: "Cyber hygiene for small businesses",
-      },
-      ratings: {
-        placeholder: "Select a rating",
-        five: "5/5 - excellent",
-        four: "4/5 - very good",
-        three: "3/5 - good",
-        two: "2/5 - below expectations",
-        one: "1/5 - needs improvement",
-      },
-      session: {
-        label: "Account status",
-        loggedOutTitle: "Client not signed in",
-        loggedOutDesc: "Register or sign in to write a comment.",
-        loggedIn: "Signed in client: {name}",
-        email: "Email: {email}",
-      },
-      logout: "Log out",
-      messages: {
-        fillAll: "Complete all required fields.",
-        invalidEmail: "Enter a valid email address.",
-        invalidPhone: "Enter a valid phone number.",
-        shortPassword: "Password must be at least 8 characters long.",
-        userExists: "An account with this email address already exists.",
-        registerSuccess: "Account created successfully. Client {name} is now signed in.",
-        registerSaveError: "The account could not be created on the server.",
-        loginSuccess: "Sign-in completed successfully.",
-        loginError: "Incorrect email or password.",
-        logoutSuccess: "The client session has been closed.",
-        loginRequired: "Sign in to add a review.",
-        shortComment: "The comment should be at least 30 characters long.",
-        reviewSuccess: "The review has been added to the comments section.",
-        reviewUpdated: "Your earlier review for this service has been updated.",
-        reviewSaveError: "The review could not be saved on the server.",
-        serverUnavailable: "The server is temporarily unavailable. Please try again in a moment.",
-        sessionExpired: "Your session has expired. Please sign in again.",
       },
     },
     faq: {
@@ -642,8 +528,9 @@ const STORAGE_KEYS = {
   language: "fifthace_lang",
 };
 
+const REVIEWS_DATA_PATH = "data/reviews.json";
+
 const appState = {
-  currentUser: null,
   reviews: [],
   reviewsLoading: true,
   reviewsLoadFailed: false,
@@ -669,19 +556,6 @@ function setStoredString(key, value) {
   } catch (error) {
     return false;
   }
-}
-
-function normalizeEmail(email) {
-  return email.trim().toLowerCase();
-}
-
-function isValidEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
-function isValidPhone(phone) {
-  const normalizedPhone = phone.replace(/[\s()-]/g, "");
-  return /^\+?\d{7,15}$/.test(normalizedPhone);
 }
 
 function escapeHtml(value) {
@@ -721,98 +595,52 @@ function getServiceLabel(serviceKey) {
   return t(`reviews.services.${serviceKey}`) || serviceKey;
 }
 
+function getLocalizedValue(value) {
+  if (typeof value === "string") {
+    return value;
+  }
+
+  if (value && typeof value === "object") {
+    return value[activeLanguage] ?? value.pl ?? value.en ?? "";
+  }
+
+  return "";
+}
+
 function createStars(rating) {
   const normalizedRating = Math.max(0, Math.min(5, Number(rating) || 0));
   return `${"★".repeat(normalizedRating)}${"☆".repeat(5 - normalizedRating)}`;
 }
 
-function getDisplayName(user) {
-  if (!user) {
-    return "";
-  }
-
-  if (user.displayName) {
-    return user.displayName;
-  }
-
-  const lastInitial = user.lastName ? `${user.lastName.charAt(0).toUpperCase()}.` : "";
-  return [user.firstName, lastInitial].filter(Boolean).join(" ");
-}
-
-function getRawErrorMessage(error, fallbackKey = "reviews.messages.serverUnavailable") {
-  if (error?.payload?.error) {
-    return error.payload.error;
-  }
-
-  return t(fallbackKey);
-}
-
-function renderPortalMessage() {
-  if (!portalFeedbackNode) {
-    return;
-  }
-
-  if (!activePortalMessage) {
-    portalFeedbackNode.hidden = true;
-    portalFeedbackNode.textContent = "";
-    portalFeedbackNode.className = "portal-feedback";
-    return;
-  }
-
-  const { type, value, raw, replacements } = activePortalMessage;
-  const message = raw ? value : t(value, replacements);
-
-  if (!message) {
-    portalFeedbackNode.hidden = true;
-    portalFeedbackNode.textContent = "";
-    portalFeedbackNode.className = "portal-feedback";
-    return;
-  }
-
-  portalFeedbackNode.hidden = false;
-  portalFeedbackNode.textContent = message;
-  portalFeedbackNode.className = `portal-feedback is-${type}`;
-}
-
-function clearPortalMessage() {
-  activePortalMessage = null;
-  renderPortalMessage();
-}
-
-function setPortalMessage(type, value, options = {}) {
-  if (!value) {
-    clearPortalMessage();
-    return;
-  }
-
-  activePortalMessage = {
-    type,
-    value,
-    raw: options.raw ?? false,
-    replacements: options.replacements ?? {},
-  };
-  renderPortalMessage();
-}
-
 function sortReviews(reviews) {
   return [...reviews].sort((left, right) => {
-    const leftDate = new Date(left.updatedAt ?? left.createdAt ?? 0).getTime();
-    const rightDate = new Date(right.updatedAt ?? right.createdAt ?? 0).getTime();
+    const leftDate = new Date(left.updatedAt ?? left.createdAt ?? left.date ?? 0).getTime();
+    const rightDate = new Date(right.updatedAt ?? right.createdAt ?? right.date ?? 0).getTime();
     return rightDate - leftDate;
   });
 }
 
-function upsertReview(review) {
-  const nextReviews = [...appState.reviews];
-  const existingIndex = nextReviews.findIndex((entry) => entry.id === review.id);
+function getReviewAuthorName(review) {
+  return getLocalizedValue(review.authorName) || "Fifth Ace";
+}
 
-  if (existingIndex >= 0) {
-    nextReviews[existingIndex] = review;
-  } else {
-    nextReviews.push(review);
+function getReviewInitials(review) {
+  if (review.authorInitials) {
+    return String(review.authorInitials).slice(0, 3).toUpperCase();
   }
 
-  appState.reviews = sortReviews(nextReviews);
+  const initials = getReviewAuthorName(review)
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part.charAt(0).toUpperCase())
+    .join("");
+
+  return initials || "FA";
+}
+
+function getReviewComment(review) {
+  return getLocalizedValue(review.comment);
 }
 
 function renderReviewsState(titleKey, descKey) {
@@ -850,11 +678,13 @@ function renderReviews() {
 
   reviewsListNode.innerHTML = appState.reviews
     .map((review) => {
-      const authorName = escapeHtml(review.authorName ?? "Fifth Ace");
-      const authorInitials = escapeHtml(review.authorInitials ?? "FA");
+      const authorName = escapeHtml(getReviewAuthorName(review));
+      const authorInitials = escapeHtml(getReviewInitials(review));
       const serviceLabel = escapeHtml(getServiceLabel(review.service));
-      const reviewDate = escapeHtml(formatReviewDate(review.updatedAt ?? review.createdAt));
-      const message = escapeHtml(review.comment ?? "");
+      const reviewDate = escapeHtml(
+        formatReviewDate(review.updatedAt ?? review.createdAt ?? review.date)
+      );
+      const message = escapeHtml(getReviewComment(review));
       const stars = createStars(review.rating);
 
       return `
@@ -877,119 +707,19 @@ function renderReviews() {
     .join("");
 }
 
-function renderPortalState() {
-  const currentUser = appState.currentUser;
-
-  if (portalSessionNode) {
-    if (currentUser) {
-      portalSessionNode.innerHTML = `
-        <div class="session-card">
-          <div>
-            <p class="session-kicker">${escapeHtml(t("reviews.session.label"))}</p>
-            <strong>${escapeHtml(
-              t("reviews.session.loggedIn", { name: getDisplayName(currentUser) })
-            )}</strong>
-            <span>${escapeHtml(
-              t("reviews.session.email", { email: normalizeEmail(currentUser.email ?? "") })
-            )}</span>
-          </div>
-          <button class="btn btn-secondary" type="button" data-logout-client>
-            ${escapeHtml(t("reviews.logout"))}
-          </button>
-        </div>
-      `;
-    } else {
-      portalSessionNode.innerHTML = `
-        <div class="session-card is-logged-out">
-          <div>
-            <p class="session-kicker">${escapeHtml(t("reviews.session.label"))}</p>
-            <strong>${escapeHtml(t("reviews.session.loggedOutTitle"))}</strong>
-            <span>${escapeHtml(t("reviews.session.loggedOutDesc"))}</span>
-          </div>
-        </div>
-      `;
-    }
-  }
-
-  if (reviewFieldset) {
-    reviewFieldset.disabled = !currentUser;
-  }
-
-  if (reviewLockNote) {
-    reviewLockNote.textContent = currentUser
-      ? t("reviews.review.ready", { name: currentUser.firstName })
-      : t("reviews.review.locked");
-  }
-}
-
-function setActivePortalTab(tabName) {
-  const nextTab = ["register", "login", "review"].includes(tabName) ? tabName : "register";
-  activePortalTab = nextTab;
-
-  portalTabs.forEach((button) => {
-    const isActive = button.dataset.portalTab === nextTab;
-    button.classList.toggle("is-active", isActive);
-    button.setAttribute("aria-pressed", String(isActive));
-  });
-
-  if (registerForm) {
-    registerForm.hidden = nextTab !== "register";
-  }
-
-  if (loginForm) {
-    loginForm.hidden = nextTab !== "login";
-  }
-
-  if (reviewForm) {
-    reviewForm.hidden = nextTab !== "review";
-  }
-}
-
-async function fetchJson(url, options = {}) {
-  const headers = new Headers(options.headers || {});
-
-  if (!headers.has("Accept")) {
-    headers.set("Accept", "application/json");
-  }
-
-  const hasBody = options.body !== undefined && options.body !== null;
-
-  if (hasBody && !headers.has("Content-Type")) {
-    headers.set("Content-Type", "application/json");
-  }
-
-  const response = await fetch(url, {
-    ...options,
-    headers,
-    credentials: "same-origin",
-  });
-
-  const contentType = response.headers.get("content-type") || "";
-  const payload = contentType.includes("application/json") ? await response.json() : null;
-
-  if (!response.ok) {
-    const error = new Error(payload?.error || `HTTP ${response.status}`);
-    error.status = response.status;
-    error.payload = payload;
-    throw error;
-  }
-
-  return payload ?? {};
-}
-
-async function loadSession() {
-  const payload = await fetchJson("/api/session");
-  appState.currentUser = payload.user ?? null;
-  renderPortalState();
-}
-
 async function loadReviews() {
   appState.reviewsLoading = true;
   appState.reviewsLoadFailed = false;
   renderReviews();
 
   try {
-    const payload = await fetchJson("/api/reviews");
+    const response = await fetch(REVIEWS_DATA_PATH, { cache: "no-store" });
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    const payload = await response.json();
     appState.reviews = sortReviews(Array.isArray(payload.reviews) ? payload.reviews : []);
     appState.reviewsLoadFailed = false;
   } catch (error) {
@@ -999,11 +729,6 @@ async function loadReviews() {
     appState.reviewsLoading = false;
     renderReviews();
   }
-}
-
-async function loadInitialState() {
-  await Promise.allSettled([loadSession(), loadReviews()]);
-  setActivePortalTab(appState.currentUser ? "review" : "register");
 }
 
 function applyLanguage(language) {
@@ -1041,8 +766,6 @@ function applyLanguage(language) {
 
   setStoredString(STORAGE_KEYS.language, selectedLanguage);
   renderReviews();
-  renderPortalState();
-  renderPortalMessage();
 }
 
 if (yearNode) {
@@ -1062,201 +785,13 @@ if (brandAvatarImage) {
 const savedLanguage = getStoredString(STORAGE_KEYS.language);
 applyLanguage(savedLanguage || "pl");
 renderReviews();
-renderPortalState();
-setActivePortalTab("register");
 
 languageButtons.forEach((button) => {
   button.addEventListener("click", () => {
     applyLanguage(button.dataset.langSwitch);
   });
 });
-
-portalTabs.forEach((button) => {
-  button.addEventListener("click", () => {
-    const selectedTab = button.dataset.portalTab;
-    setActivePortalTab(selectedTab);
-
-    if (selectedTab === "review" && !appState.currentUser) {
-      setPortalMessage("info", "reviews.messages.loginRequired");
-    }
-  });
-});
-
-if (portalSessionNode) {
-  portalSessionNode.addEventListener("click", async (event) => {
-    const logoutButton = event.target.closest("[data-logout-client]");
-
-    if (!logoutButton) {
-      return;
-    }
-
-    try {
-      await fetchJson("/api/logout", { method: "POST" });
-    } catch (error) {
-      setPortalMessage("error", getRawErrorMessage(error), { raw: true });
-      return;
-    }
-
-    appState.currentUser = null;
-    renderPortalState();
-    setActivePortalTab("login");
-    setPortalMessage("info", "reviews.messages.logoutSuccess");
-  });
-}
-
-if (registerForm) {
-  registerForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
-
-    const formData = new FormData(registerForm);
-    const firstName = String(formData.get("firstName") ?? "").trim();
-    const lastName = String(formData.get("lastName") ?? "").trim();
-    const phone = String(formData.get("phone") ?? "").trim();
-    const email = normalizeEmail(String(formData.get("email") ?? ""));
-    const password = String(formData.get("password") ?? "");
-
-    if (!firstName || !lastName || !phone || !email || !password) {
-      setPortalMessage("error", "reviews.messages.fillAll");
-      return;
-    }
-
-    if (!isValidEmail(email)) {
-      setPortalMessage("error", "reviews.messages.invalidEmail");
-      return;
-    }
-
-    if (!isValidPhone(phone)) {
-      setPortalMessage("error", "reviews.messages.invalidPhone");
-      return;
-    }
-
-    if (password.length < 8) {
-      setPortalMessage("error", "reviews.messages.shortPassword");
-      return;
-    }
-
-    try {
-      const payload = await fetchJson("/api/register", {
-        method: "POST",
-        body: JSON.stringify({
-          firstName,
-          lastName,
-          phone,
-          email,
-          password,
-        }),
-      });
-
-      appState.currentUser = payload.user ?? null;
-      registerForm.reset();
-      renderPortalState();
-      setActivePortalTab("review");
-      setPortalMessage("success", "reviews.messages.registerSuccess", {
-        replacements: { name: appState.currentUser?.firstName ?? firstName },
-      });
-    } catch (error) {
-      if (error.status === 409) {
-        setPortalMessage("error", "reviews.messages.userExists");
-        return;
-      }
-
-      setPortalMessage("error", getRawErrorMessage(error), { raw: true });
-    }
-  });
-}
-
-if (loginForm) {
-  loginForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
-
-    const formData = new FormData(loginForm);
-    const email = normalizeEmail(String(formData.get("email") ?? ""));
-    const password = String(formData.get("password") ?? "");
-
-    if (!email || !password) {
-      setPortalMessage("error", "reviews.messages.fillAll");
-      return;
-    }
-
-    try {
-      const payload = await fetchJson("/api/login", {
-        method: "POST",
-        body: JSON.stringify({ email, password }),
-      });
-
-      appState.currentUser = payload.user ?? null;
-      loginForm.reset();
-      renderPortalState();
-      setActivePortalTab("review");
-      setPortalMessage("success", "reviews.messages.loginSuccess");
-    } catch (error) {
-      if (error.status === 401) {
-        setPortalMessage("error", "reviews.messages.loginError");
-        return;
-      }
-
-      setPortalMessage("error", getRawErrorMessage(error), { raw: true });
-    }
-  });
-}
-
-if (reviewForm) {
-  reviewForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
-
-    if (!appState.currentUser) {
-      setActivePortalTab("login");
-      setPortalMessage("info", "reviews.messages.loginRequired");
-      return;
-    }
-
-    const formData = new FormData(reviewForm);
-    const service = String(formData.get("service") ?? "").trim();
-    const rating = Number(formData.get("rating") ?? 0);
-    const comment = String(formData.get("comment") ?? "").trim();
-
-    if (!service || !rating || !comment) {
-      setPortalMessage("error", "reviews.messages.fillAll");
-      return;
-    }
-
-    if (comment.length < 30) {
-      setPortalMessage("error", "reviews.messages.shortComment");
-      return;
-    }
-
-    try {
-      const payload = await fetchJson("/api/reviews", {
-        method: "POST",
-        body: JSON.stringify({ service, rating, comment }),
-      });
-
-      if (payload.review) {
-        upsertReview(payload.review);
-        renderReviews();
-      }
-
-      reviewForm.reset();
-      renderPortalState();
-      setPortalMessage(
-        "success",
-        payload.created ? "reviews.messages.reviewSuccess" : "reviews.messages.reviewUpdated"
-      );
-    } catch (error) {
-      if (error.status === 401) {
-        appState.currentUser = null;
-        renderPortalState();
-        setActivePortalTab("login");
-        setPortalMessage("error", "reviews.messages.sessionExpired");
-        return;
-      }
-
-      setPortalMessage("error", getRawErrorMessage(error), { raw: true });
-    }
-  });
-}
-
-loadInitialState();
+loadReviews();
 
 const revealItems = document.querySelectorAll(".reveal");
 
