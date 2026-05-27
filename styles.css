@@ -1007,6 +1007,38 @@ h1 {
   gap: 18px;
 }
 
+.service-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.service-steps div {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+  background: rgba(8, 13, 24, 0.72);
+}
+
+.service-steps span {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-family: "Orbitron", sans-serif;
+  color: var(--cyan);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+}
+
+.service-steps strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.service-steps p {
+  margin: 0;
+}
+
 .service-highlight {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1159,6 +1191,7 @@ h1 {
   .experience-grid,
   .faq-grid,
   .seo-cards,
+  .service-steps,
   .service-highlight,
   .review-highlights {
     grid-template-columns: 1fr 1fr;
@@ -1189,6 +1222,7 @@ h1 {
   .experience-grid,
   .faq-grid,
   .seo-cards,
+  .service-steps,
   .service-highlight,
   .review-highlights,
   .form-row {

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Testy penetracyjne aplikacji webowych, API i sieci: symulacja ataku, wykrywanie luk, retesty i plan naprawczy."
+      content="Testy penetracyjne aplikacji webowych i internetowych, API oraz sieci: testy bezpieczeństwa aplikacji, raport podatności, retest i plan naprawczy."
     />
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <link
@@ -15,11 +15,11 @@
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Testy penetracyjne aplikacji i sieci | Fifth Ace"
+      content="Testy penetracyjne aplikacji webowych | Fifth Ace"
     />
     <meta
       property="og:description"
-      content="Pentesty aplikacji webowych, API i infrastruktury: wykrywanie podatności, ocena ryzyka i retesty po wdrożeniu poprawek."
+      content="Pentesty aplikacji webowych, API i infrastruktury: testy bezpieczeństwa aplikacji, wykrywanie podatności, ocena ryzyka i retesty."
     />
     <meta
       property="og:url"
@@ -29,7 +29,7 @@
       property="og:image"
       content="https://piotrkleszcz.github.io/Fifth-Ace-website/logo.jpeg"
     />
-    <title>Testy penetracyjne aplikacji i sieci | Fifth Ace</title>
+    <title>Testy penetracyjne aplikacji webowych | Fifth Ace</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -40,17 +40,63 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Testy penetracyjne aplikacji i sieci",
-        "provider": {
-          "@type": "ProfessionalService",
-          "name": "Fifth Ace",
-          "url": "https://piotrkleszcz.github.io/Fifth-Ace-website/"
-        },
-        "url": "https://piotrkleszcz.github.io/Fifth-Ace-website/testy-penetracyjne.html",
-        "serviceType": "Penetration testing",
-        "areaServed": "PL",
-        "description": "Testy penetracyjne aplikacji webowych, API, środowisk chmurowych oraz sieci."
+        "@graph": [
+          {
+            "@type": "Service",
+            "name": "Testy penetracyjne aplikacji webowych",
+            "provider": {
+              "@type": "ProfessionalService",
+              "name": "Fifth Ace",
+              "url": "https://piotrkleszcz.github.io/Fifth-Ace-website/"
+            },
+            "url": "https://piotrkleszcz.github.io/Fifth-Ace-website/testy-penetracyjne.html",
+            "serviceType": [
+              "Testy penetracyjne aplikacji webowych",
+              "Pentest aplikacji webowej",
+              "Testy bezpieczeństwa aplikacji",
+              "Penetration testing"
+            ],
+            "areaServed": "PL",
+            "description": "Testy penetracyjne aplikacji webowych, aplikacji internetowych, API, środowisk chmurowych oraz sieci."
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Ile trwa test penetracyjny aplikacji webowej?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Czas zależy od zakresu aplikacji, liczby ról użytkowników i dostępnych środowisk. Mały test może zająć kilka dni roboczych, a szerszy pentest aplikacji, API i infrastruktury wymaga osobnego planu."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Co zawiera raport z testu penetracyjnego?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Raport zawiera opis podatności, ocenę ryzyka, wpływ na aplikację lub firmę, rekomendacje naprawcze oraz listę działań do retestu."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Czy pentest jest bezpieczny dla działającej aplikacji?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Zakres i intensywność testu ustala się przed startem. Dla produkcji stosuje się ostrożniejsze scenariusze, a bardziej ryzykowne techniki warto wykonywać na środowisku testowym."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Czym różni się audyt bezpieczeństwa od pentestu?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Audyt bezpieczeństwa porządkuje konfigurację, procesy i ryzyka, a pentest praktycznie sprawdza, czy konkretne luki można wykorzystać technikami podobnymi do realnego ataku."
+                }
+              }
+            ]
+          }
+        ]
       }
     </script>
   </head>
@@ -87,16 +133,16 @@
           <a href="index.html">Strona główna</a> / Testy penetracyjne
         </p>
         <p class="eyebrow">Pentesty • Aplikacje webowe • API • Sieci</p>
-        <h1>Testy penetracyjne aplikacji i sieci</h1>
+        <h1>Testy penetracyjne aplikacji webowych i sieci</h1>
         <p class="lead">
-          Testy penetracyjne pozwalają sprawdzić, czy aplikacja, API lub
-          infrastruktura zachowuje się bezpiecznie pod presją realnych technik
-          ataku. To praktyczny sposób na wykrycie luk, zanim zrobi to ktoś obcy.
+          Testy penetracyjne aplikacji webowych i aplikacji internetowych
+          pozwalają sprawdzić, czy logowanie, autoryzacja, API i infrastruktura
+          zachowują się bezpiecznie pod presją realnych technik ataku.
         </p>
         <p class="lead lead-accent">
-          Fifth Ace koncentruje się na czytelnych wynikach, wskazaniu wpływu na
-          biznes oraz retestach po wdrożeniu poprawek, żeby potwierdzić, że luka
-          została rzeczywiście usunięta.
+          Pentest aplikacji webowej nie kończy się na liście błędów. Fifth Ace
+          koncentruje się na testach bezpieczeństwa aplikacji, czytelnym raporcie,
+          wskazaniu wpływu na biznes oraz retestach po wdrożeniu poprawek.
         </p>
         <div class="inline-cta">
           <a class="btn btn-primary" href="mailto:fifthace@gmx.com">Zapytaj o pentest</a>
@@ -109,9 +155,9 @@
           <h2>Zakres testów penetracyjnych</h2>
           <p>
             W zależności od potrzeb pentest może objąć aplikację webową, API,
-            elementy infrastruktury, usługi wystawione do internetu albo sieć
-            wewnętrzną. Celem jest identyfikacja podatności, ścieżek eskalacji
-            uprawnień i błędów konfiguracji.
+            panel administracyjny, elementy infrastruktury, usługi wystawione do
+            internetu albo sieć wewnętrzną. Celem jest identyfikacja podatności,
+            ścieżek eskalacji uprawnień i błędów konfiguracji.
           </p>
           <div class="service-highlight">
             <div class="mini-card">
@@ -119,12 +165,12 @@
               Logowanie, autoryzacja, dane użytkownika, błędy logiki i ekspozycja usług.
             </div>
             <div class="mini-card">
-              <strong>Sieć i hosty</strong>
-              Usługi, porty, segmentacja, stare protokoły i widoczność zasobów.
+              <strong>Aplikacje internetowe</strong>
+              Formularze, role, sesje, upload plików, panele klienta i administratora.
             </div>
             <div class="mini-card">
-              <strong>Retest</strong>
-              Weryfikacja, czy poprawki faktycznie usunęły wskazane słabości.
+              <strong>Sieć i hosty</strong>
+              Usługi, porty, segmentacja, stare protokoły i widoczność zasobów.
             </div>
           </div>
         </article>
@@ -147,6 +193,8 @@
           <ul>
             <li>Mechanizmy logowania, sesji i resetu hasła.</li>
             <li>Uprawnienia użytkowników i kontrola dostępu.</li>
+            <li>Błędy logiki biznesowej w aplikacji webowej.</li>
+            <li>Bezpieczeństwo API, tokenów i endpointów integracyjnych.</li>
             <li>Błędy konfiguracji usług wystawionych publicznie.</li>
             <li>Widoczność zasobów w sieci lokalnej i wewnętrznej.</li>
             <li>Ekspozycja danych, tokenów i punktów API.</li>
@@ -168,6 +216,57 @@
           </ul>
         </article>
 
+        <article class="service-list reveal">
+          <h2>Proces pentestu aplikacji</h2>
+          <div class="service-steps">
+            <div>
+              <span>01</span>
+              <strong>Ustalenie zakresu</strong>
+              <p>Aplikacja, API, role użytkowników, środowisko testowe i okna testowe.</p>
+            </div>
+            <div>
+              <span>02</span>
+              <strong>Testy bezpieczeństwa</strong>
+              <p>Ręczna analiza logiki, konfiguracji, kontroli dostępu i podatności.</p>
+            </div>
+            <div>
+              <span>03</span>
+              <strong>Raport i konsultacja</strong>
+              <p>Priorytety, wpływ biznesowy, przykłady i rekomendacje naprawcze.</p>
+            </div>
+            <div>
+              <span>04</span>
+              <strong>Retest poprawek</strong>
+              <p>Sprawdzenie, czy poprawki zamknęły podatności bez nowych skutków ubocznych.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-list reveal">
+          <h2>Dla kogo jest pentest aplikacji webowej</h2>
+          <ul>
+            <li>Dla firmy publikującej nową aplikację internetową lub panel klienta.</li>
+            <li>Dla zespołu po większych zmianach w logowaniu, API albo uprawnieniach.</li>
+            <li>Dla właściciela systemu, który chce sprawdzić ryzyko przed rozmową z klientem.</li>
+            <li>Dla małej firmy, która potrzebuje praktycznego testu bez dużego działu security.</li>
+          </ul>
+        </article>
+
+        <article class="service-list reveal">
+          <h2>Czego nie obejmuje standardowy pentest</h2>
+          <p>
+            Zakres zawsze warto ustalić przed startem. Standardowy pentest
+            aplikacji webowej nie musi obejmować wszystkich systemów firmy,
+            testów socjotechnicznych ani testów obciążeniowych.
+          </p>
+          <ul>
+            <li>Ataków phishingowych na pracowników bez osobnej zgody i scenariusza.</li>
+            <li>Testów DDoS, testów wydajnościowych i agresywnego obciążania produkcji.</li>
+            <li>Analizy kodu źródłowego, jeśli zakres obejmuje wyłącznie test black-box.</li>
+            <li>Wdrażania poprawek po stronie aplikacji, chyba że ustalimy osobne wsparcie.</li>
+          </ul>
+        </article>
+
         <article class="service-related reveal">
           <h2>Powiązane usługi</h2>
           <div class="related-links">
@@ -185,6 +284,47 @@
             >
           </div>
         </article>
+      </section>
+
+      <section class="section container">
+        <div class="section-heading reveal">
+          <p class="eyebrow section-eyebrow">FAQ</p>
+          <h2>Najczęstsze pytania o testy penetracyjne</h2>
+        </div>
+        <div class="faq-grid">
+          <article class="faq-item reveal">
+            <h3>Ile trwa test penetracyjny?</h3>
+            <p>
+              To zależy od rozmiaru aplikacji, liczby ról i zakresu API. Mały
+              pentest aplikacji webowej może zająć kilka dni roboczych, a większy
+              zakres wymaga osobnej wyceny i harmonogramu.
+            </p>
+          </article>
+          <article class="faq-item reveal">
+            <h3>Co zawiera raport z testu?</h3>
+            <p>
+              Raport opisuje podatności, ryzyko, przykładowy scenariusz
+              wykorzystania, rekomendacje naprawcze oraz kolejność działań przed
+              retestem.
+            </p>
+          </article>
+          <article class="faq-item reveal">
+            <h3>Czy testy są bezpieczne dla działającej aplikacji?</h3>
+            <p>
+              Tak, jeśli zakres i zasady są ustalone przed startem. Ryzykowne
+              techniki najlepiej wykonywać na środowisku testowym, a produkcję
+              sprawdzać ostrożniej i w uzgodnionych oknach.
+            </p>
+          </article>
+          <article class="faq-item reveal">
+            <h3>Czym różni się audyt bezpieczeństwa od pentestu?</h3>
+            <p>
+              Audyt ocenia konfigurację, procesy i ryzyka. Pentest praktycznie
+              sprawdza, czy konkretne podatności można wykorzystać w aplikacji,
+              API albo infrastrukturze.
+            </p>
+          </article>
+        </div>
       </section>
 
       <section class="section container cta reveal">
