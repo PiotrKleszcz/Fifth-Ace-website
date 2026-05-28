@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://piotrkleszcz.github.io/Fifth-Ace-website/sitemap.xml
+Sitemap: https://www.fifthace.net/sitemap.xml
