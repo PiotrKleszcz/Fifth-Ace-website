@@ -448,6 +448,17 @@ h1 {
   color: #7de8ff;
 }
 
+.inline-link {
+  color: var(--cyan);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.inline-link:hover {
+  color: #7de8ff;
+}
+
 .card-kicker {
   margin: 0 0 10px;
   color: var(--cyan);
@@ -1164,6 +1175,10 @@ h1 {
   width: 22.5px;
   height: 22.5px;
   fill: currentColor;
+}
+
+.social-github:hover {
+  color: #d6e4ff;
 }
 
 .social-youtube:hover {

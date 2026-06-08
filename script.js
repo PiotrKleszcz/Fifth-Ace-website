@@ -147,6 +147,7 @@ const i18n = {
         li1: "Kali Linux i narzędzia: Nmap, Netdiscover, Bettercap, Wifite",
         li2: "Monitoring sieci LAN i ocena podatności urządzeń",
         li3: "Wsparcie OWASP: tłumaczenia dokumentacji LLM oraz Juice Shop na język polski",
+        li4Prefix: "Portfolio techniczne i laboratoria bezpieczeństwa:",
       },
       card4: {
         title: "Zakres kompetencji technicznych",
@@ -400,6 +401,7 @@ const i18n = {
         li1: "Kali Linux tools: Nmap, Netdiscover, Bettercap, Wifite",
         li2: "LAN monitoring and device vulnerability assessment",
         li3: "OWASP support: translating LLM and Juice Shop documentation into Polish",
+        li4Prefix: "Technical portfolio and security labs:",
       },
       card4: {
         title: "Technical capability scope",
