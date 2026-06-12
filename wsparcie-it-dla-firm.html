@@ -12,6 +12,7 @@
       rel="canonical"
       href="https://www.fifthace.net/wsparcie-it-dla-firm.html"
     />
+    <link rel="icon" href="logo.jpeg" type="image/jpeg" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Wsparcie IT dla firm | Fifth Ace" />
     <meta
@@ -26,6 +27,10 @@
       property="og:image"
       content="https://www.fifthace.net/logo.jpeg"
     />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Wsparcie IT dla firm | Fifth Ace" />
+    <meta name="twitter:description" content="Helpdesk, administracja, backupy, utrzymanie środowiska i codzienne wsparcie IT dla małych firm i zespołów." />
+    <meta name="twitter:image" content="https://www.fifthace.net/logo.jpeg" />
     <title>Wsparcie IT dla firm | Fifth Ace</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,17 +42,58 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Wsparcie IT dla firm",
-        "provider": {
-          "@type": "ProfessionalService",
-          "name": "Fifth Ace",
-          "url": "https://www.fifthace.net/"
-        },
-        "url": "https://www.fifthace.net/wsparcie-it-dla-firm.html",
-        "serviceType": "IT support",
-        "areaServed": "PL",
-        "description": "Wsparcie IT, helpdesk, utrzymanie stacji roboczych, serwerów i podstaw bezpieczeństwa dla małych firm."
+        "@graph": [
+          {
+            "@type": "Service",
+            "name": "Wsparcie IT dla firm",
+            "provider": {
+              "@type": "ProfessionalService",
+              "name": "Fifth Ace",
+              "url": "https://www.fifthace.net/"
+            },
+            "url": "https://www.fifthace.net/wsparcie-it-dla-firm.html",
+            "serviceType": "IT support",
+            "areaServed": "PL",
+            "description": "Wsparcie IT, helpdesk, utrzymanie stacji roboczych, serwerów i podstaw bezpieczeństwa dla małych firm."
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Co obejmuje wsparcie IT dla małej firmy?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Zakres może obejmować konfigurację laptopów, kont, poczty, backupów, sieci, drukarek, aktualizacji oraz podstaw bezpieczeństwa potrzebnych w codziennej pracy."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Czy można zacząć od jednego problemu?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Tak. Dobrym początkiem może być uporządkowanie backupów, konfiguracji poczty, MFA, laptopów albo sieci Wi-Fi, a dopiero później stała opieka nad całym środowiskiem."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Czy wsparcie IT obejmuje bezpieczeństwo?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Tak, w praktycznym zakresie: aktualizacje, konfiguracja kont, backupy, MFA, bezpieczna praca z plikami i minimalizowanie typowych błędów administracyjnych."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Dla jakich firm to ma sens?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Dla małych zespołów, freelancerów i firm bez własnego administratora, które potrzebują spokojnej obsługi IT oraz prostego porządku w urządzeniach, kontach i danych."
+                }
+              }
+            ]
+          }
+        ]
       }
     </script>
   </head>
@@ -59,7 +105,7 @@
     <header class="topbar container">
       <a href="index.html" class="brand">
         <span class="brand-mark" aria-hidden="true">
-          <img src="logo.jpeg" alt="Logo Fifth Ace" class="brand-avatar-img" />
+          <img src="logo.jpeg" alt="Logo Fifth Ace" class="brand-avatar-img" width="1098" height="1175" />
           <span class="brand-avatar-fallback avatar avatar-v1">
             <span class="avatar-card"></span>
             <span class="avatar-core"></span>

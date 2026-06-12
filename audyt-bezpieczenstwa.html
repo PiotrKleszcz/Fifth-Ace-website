@@ -12,6 +12,7 @@
       rel="canonical"
       href="https://www.fifthace.net/audyt-bezpieczenstwa.html"
     />
+    <link rel="icon" href="logo.jpeg" type="image/jpeg" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Audyt bezpieczeństwa | Fifth Ace" />
     <meta
@@ -26,6 +27,10 @@
       property="og:image"
       content="https://www.fifthace.net/logo.jpeg"
     />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Audyt bezpieczeństwa | Fifth Ace" />
+    <meta name="twitter:description" content="Audyt bezpieczeństwa: wykrywanie słabych punktów, ocena ryzyka i plan poprawek dla małych firm i środowisk domowych." />
+    <meta name="twitter:image" content="https://www.fifthace.net/logo.jpeg" />
     <title>Audyt bezpieczeństwa | Fifth Ace</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,17 +42,58 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Audyt bezpieczeństwa",
-        "provider": {
-          "@type": "ProfessionalService",
-          "name": "Fifth Ace",
-          "url": "https://www.fifthace.net/"
-        },
-        "url": "https://www.fifthace.net/audyt-bezpieczenstwa.html",
-        "serviceType": "Audyt bezpieczeństwa",
-        "areaServed": "PL",
-        "description": "Audyt bezpieczeństwa środowiska IT, kont, sieci lokalnej i podstawowych procedur."
+        "@graph": [
+          {
+            "@type": "Service",
+            "name": "Audyt bezpieczeństwa",
+            "provider": {
+              "@type": "ProfessionalService",
+              "name": "Fifth Ace",
+              "url": "https://www.fifthace.net/"
+            },
+            "url": "https://www.fifthace.net/audyt-bezpieczenstwa.html",
+            "serviceType": "Audyt bezpieczeństwa",
+            "areaServed": "PL",
+            "description": "Audyt bezpieczeństwa środowiska IT, kont, sieci lokalnej i podstawowych procedur."
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Ile trwa audyt bezpieczeństwa?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Podstawowy przegląd małej firmy lub środowiska freelancera zwykle można zaplanować etapami: rozmowa, zebranie informacji, przegląd konfiguracji i omówienie listy poprawek."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Co dostanę po audycie?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Otrzymujesz listę ryzyk, priorytety działań i praktyczne rekomendacje dla kont, laptopów, poczty, Wi-Fi, backupów oraz podstawowych procedur pracy."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Czy audyt wymaga przerywania pracy?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Zwykle nie. Większość przeglądu można wykonać na podstawie rozmowy, konfiguracji i zrzutów ustawień, a ewentualne zmiany wdrażać w uzgodnionym czasie."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Czym audyt różni się od pentestu?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Audyt porządkuje ryzyka i konfigurację całego środowiska, a pentest praktycznie sprawdza odporność konkretnej aplikacji, API lub sieci na techniki ataku."
+                }
+              }
+            ]
+          }
+        ]
       }
     </script>
   </head>
@@ -59,7 +105,7 @@
     <header class="topbar container">
       <a href="index.html" class="brand">
         <span class="brand-mark" aria-hidden="true">
-          <img src="logo.jpeg" alt="Logo Fifth Ace" class="brand-avatar-img" />
+          <img src="logo.jpeg" alt="Logo Fifth Ace" class="brand-avatar-img" width="1098" height="1175" />
           <span class="brand-avatar-fallback avatar avatar-v1">
             <span class="avatar-card"></span>
             <span class="avatar-core"></span>

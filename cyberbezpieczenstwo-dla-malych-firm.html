@@ -12,6 +12,7 @@
       rel="canonical"
       href="https://www.fifthace.net/cyberbezpieczenstwo-dla-malych-firm.html"
     />
+    <link rel="icon" href="logo.jpeg" type="image/jpeg" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
@@ -29,6 +30,10 @@
       property="og:image"
       content="https://www.fifthace.net/logo.jpeg"
     />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Cyberbezpieczeństwo dla małych firm | Fifth Ace" />
+    <meta name="twitter:description" content="Praktyczne cyberbezpieczeństwo dla małych firm i freelancerów: konta, MFA, backupy, laptopy, Wi-Fi i podstawowe procedury." />
+    <meta name="twitter:image" content="https://www.fifthace.net/logo.jpeg" />
     <title>Cyberbezpieczeństwo dla małych firm | Fifth Ace</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -40,17 +45,58 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Cyberbezpieczeństwo dla małych firm",
-        "provider": {
-          "@type": "ProfessionalService",
-          "name": "Fifth Ace",
-          "url": "https://www.fifthace.net/"
-        },
-        "url": "https://www.fifthace.net/cyberbezpieczenstwo-dla-malych-firm.html",
-        "serviceType": "Cyberbezpieczeństwo",
-        "areaServed": "PL",
-        "description": "Praktyczne wsparcie w zakresie cyberbezpieczeństwa dla małych firm, freelancerów i małych zespołów."
+        "@graph": [
+          {
+            "@type": "Service",
+            "name": "Cyberbezpieczeństwo dla małych firm",
+            "provider": {
+              "@type": "ProfessionalService",
+              "name": "Fifth Ace",
+              "url": "https://www.fifthace.net/"
+            },
+            "url": "https://www.fifthace.net/cyberbezpieczenstwo-dla-malych-firm.html",
+            "serviceType": "Cyberbezpieczeństwo",
+            "areaServed": "PL",
+            "description": "Praktyczne wsparcie w zakresie cyberbezpieczeństwa dla małych firm, freelancerów i małych zespołów."
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Od czego zacząć poprawę bezpieczeństwa?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Najpierw warto uporządkować konta, MFA, kopie zapasowe, aktualizacje laptopów i podstawową konfigurację poczty. To zwykle daje najszybszy efekt przy małym nakładzie pracy."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Czy mała firma potrzebuje cyberbezpieczeństwa?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Tak, bo małe firmy często korzystają z poczty, faktur, danych klientów i chmury bez dużego działu IT. Podstawowa cyber hygiene zmniejsza ryzyko phishingu, utraty danych i przejęcia kont."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Co obejmuje praktyczny pakiet działań?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Zakres może obejmować MFA, backupy, ustawienia laptopów, przegląd Wi-Fi, bezpieczeństwo poczty, zasady haseł i krótką listę procedur dla zespołu."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Czy to jednorazowa usługa czy stałe wsparcie?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Może być jednorazowym przeglądem lub początkiem stałego wsparcia IT. Najczęściej najpierw porządkuje się podstawy, a potem ustala dalsze działania według realnego ryzyka."
+                }
+              }
+            ]
+          }
+        ]
       }
     </script>
   </head>
@@ -62,7 +108,7 @@
     <header class="topbar container">
       <a href="index.html" class="brand">
         <span class="brand-mark" aria-hidden="true">
-          <img src="logo.jpeg" alt="Logo Fifth Ace" class="brand-avatar-img" />
+          <img src="logo.jpeg" alt="Logo Fifth Ace" class="brand-avatar-img" width="1098" height="1175" />
           <span class="brand-avatar-fallback avatar avatar-v1">
             <span class="avatar-card"></span>
             <span class="avatar-core"></span>

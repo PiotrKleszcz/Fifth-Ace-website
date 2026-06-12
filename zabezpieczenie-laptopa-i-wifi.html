@@ -12,6 +12,7 @@
       rel="canonical"
       href="https://www.fifthace.net/zabezpieczenie-laptopa-i-wifi.html"
     />
+    <link rel="icon" href="logo.jpeg" type="image/jpeg" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
@@ -29,6 +30,10 @@
       property="og:image"
       content="https://www.fifthace.net/logo.jpeg"
     />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Zabezpieczenie laptopa i sieci Wi-Fi | Fifth Ace" />
+    <meta name="twitter:description" content="Hardening Windows, konfiguracja routera i szybki security check dla laptopa firmowego lub domowego środowiska pracy." />
+    <meta name="twitter:image" content="https://www.fifthace.net/logo.jpeg" />
     <title>Zabezpieczenie laptopa i sieci Wi-Fi | Fifth Ace</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -40,17 +45,58 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Zabezpieczenie laptopa i sieci Wi-Fi",
-        "provider": {
-          "@type": "ProfessionalService",
-          "name": "Fifth Ace",
-          "url": "https://www.fifthace.net/"
-        },
-        "url": "https://www.fifthace.net/zabezpieczenie-laptopa-i-wifi.html",
-        "serviceType": "Security check",
-        "areaServed": "PL",
-        "description": "Przegląd zabezpieczeń laptopa firmowego, systemu Windows, routera i sieci Wi-Fi."
+        "@graph": [
+          {
+            "@type": "Service",
+            "name": "Zabezpieczenie laptopa i sieci Wi-Fi",
+            "provider": {
+              "@type": "ProfessionalService",
+              "name": "Fifth Ace",
+              "url": "https://www.fifthace.net/"
+            },
+            "url": "https://www.fifthace.net/zabezpieczenie-laptopa-i-wifi.html",
+            "serviceType": "Security check",
+            "areaServed": "PL",
+            "description": "Przegląd zabezpieczeń laptopa firmowego, systemu Windows, routera i sieci Wi-Fi."
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Co można poprawić w laptopie firmowym?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Najczęściej warto sprawdzić aktualizacje, konto administratora, Microsoft Defender, firewall, szyfrowanie dysku, backupy, przeglądarkę i bezpieczeństwo logowania do usług."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Czy domowe Wi-Fi może być ryzykiem dla firmy?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Tak, szczególnie gdy router ma stare hasło, brak aktualizacji, słabe szyfrowanie albo jedna sieć obsługuje wszystkie urządzenia prywatne i firmowe bez żadnej separacji."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Czy trzeba wymieniać sprzęt?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Nie zawsze. Często wystarczy poprawić konfigurację, hasła, firmware, MFA, backup i sposób pracy. Wymiana sprzętu ma sens dopiero wtedy, gdy obecne urządzenie realnie blokuje bezpieczeństwo."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Czy to dobry pierwszy krok przed audytem?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Tak. Zabezpieczenie laptopa i Wi-Fi szybko zmniejsza typowe ryzyka, a późniejszy audyt może objąć szerszy obraz: konta, dane, procedury i pozostałe urządzenia."
+                }
+              }
+            ]
+          }
+        ]
       }
     </script>
   </head>
@@ -62,7 +108,7 @@
     <header class="topbar container">
       <a href="index.html" class="brand">
         <span class="brand-mark" aria-hidden="true">
-          <img src="logo.jpeg" alt="Logo Fifth Ace" class="brand-avatar-img" />
+          <img src="logo.jpeg" alt="Logo Fifth Ace" class="brand-avatar-img" width="1098" height="1175" />
           <span class="brand-avatar-fallback avatar avatar-v1">
             <span class="avatar-card"></span>
             <span class="avatar-core"></span>
