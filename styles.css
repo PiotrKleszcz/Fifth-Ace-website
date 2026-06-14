@@ -1189,6 +1189,165 @@ h1 {
   color: #ff91ee;
 }
 
+/* ===== For Whom ===== */
+.for-whom-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.for-whom-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px 22px;
+  background: linear-gradient(145deg, rgba(16, 27, 45, 0.9), rgba(9, 16, 29, 0.9));
+  box-shadow: var(--shadow);
+}
+
+.for-whom-card .card-kicker {
+  margin-bottom: 14px;
+}
+
+.for-whom-card h3 {
+  margin: 0 0 10px;
+}
+
+.for-whom-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ===== Pricing ===== */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
+  margin-top: 8px;
+}
+
+.pricing-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  background: linear-gradient(145deg, rgba(16, 27, 45, 0.9), rgba(9, 16, 29, 0.9));
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card.is-featured {
+  border-color: rgba(0, 216, 255, 0.5);
+  background: linear-gradient(145deg, rgba(0, 216, 255, 0.07), rgba(255, 79, 216, 0.05), rgba(9, 16, 29, 0.95));
+  box-shadow: 0 0 50px rgba(0, 216, 255, 0.14), var(--shadow);
+}
+
+.pricing-badge {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #030710;
+  background: linear-gradient(135deg, var(--cyan), var(--pink));
+  align-self: flex-start;
+}
+
+.pricing-name {
+  margin: 0 0 8px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.pricing-desc {
+  margin: 0 0 22px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.pricing-price {
+  margin: 0 0 24px;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.pricing-amount {
+  font-family: "Orbitron", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--cyan), var(--blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pricing-period {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.pricing-features {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  flex: 1;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--text);
+  font-size: 0.96rem;
+  line-height: 1.4;
+}
+
+.pricing-features li::before {
+  content: "✓";
+  color: var(--cyan);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.pricing-note {
+  margin-top: 18px;
+  font-size: 0.92rem;
+}
+
+/* ===== Lead Magnet ===== */
+.lead-magnet {
+  border: 1px solid rgba(0, 216, 255, 0.3);
+  border-radius: var(--radius);
+  padding: 30px 28px;
+  background: linear-gradient(145deg, rgba(0, 216, 255, 0.06), rgba(8, 12, 20, 0.92));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.lead-magnet-text h3 {
+  margin: 0 0 8px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.1rem;
+}
+
+.lead-magnet-text p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 52ch;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(16px);
@@ -1208,7 +1367,9 @@ h1 {
   .seo-cards,
   .service-steps,
   .service-highlight,
-  .review-highlights {
+  .review-highlights,
+  .for-whom-grid,
+  .pricing-grid {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -1240,8 +1401,15 @@ h1 {
   .service-steps,
   .service-highlight,
   .review-highlights,
-  .form-row {
+  .form-row,
+  .for-whom-grid,
+  .pricing-grid {
     grid-template-columns: 1fr;
+  }
+
+  .lead-magnet {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .hero {
