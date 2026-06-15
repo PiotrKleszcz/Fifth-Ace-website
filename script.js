@@ -225,7 +225,7 @@ const i18n = {
           desc: "Po potwierdzeniu treści opinia trafia do pliku strony i pojawia się w tej sekcji.",
         },
         emailCta: "Wyślij opinię mailem",
-        instagramCta: "Napisz na Instagramie",
+        linkedinCta: "Napisz na LinkedIn",
       },
       services: {
         securityAudit: "Audyt bezpieczeństwa",
@@ -544,7 +544,7 @@ const i18n = {
           desc: "Once the wording is confirmed, the review is added to the site data file and appears in this section.",
         },
         emailCta: "Send a review by email",
-        instagramCta: "Message on Instagram",
+        linkedinCta: "Message on LinkedIn",
       },
       services: {
         securityAudit: "Security audit",
