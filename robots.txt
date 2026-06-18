@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.fifthace.net/sitemap.xml
+Sitemap: https://fifthace.net/sitemap.xml
