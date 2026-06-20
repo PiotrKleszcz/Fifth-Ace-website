@@ -1348,10 +1348,194 @@ h1 {
   max-width: 52ch;
 }
 
+/* ===== Theme toggle button ===== */
+.theme-btn {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(230, 240, 255, 0.30);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.theme-btn:hover {
+  color: var(--text);
+  border-color: rgba(0, 216, 255, 0.45);
+  background: rgba(0, 216, 255, 0.06);
+}
+
+.theme-btn:focus-visible {
+  outline: 2px solid rgba(0, 216, 255, 0.8);
+  outline-offset: 2px;
+}
+
+/* ===== Light mode ===== */
+html[data-theme="light"] {
+  --bg: #f0f4fb;
+  --panel: rgba(255, 255, 255, 0.85);
+  --panel-solid: #ffffff;
+  --text: #0d1628;
+  --muted: #4a607e;
+  --line: rgba(13, 30, 70, 0.13);
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+html[data-theme="light"] body {
+  background: radial-gradient(circle at 20% -10%, rgba(0, 216, 255, 0.10), transparent 45%),
+    radial-gradient(circle at 100% 10%, rgba(255, 79, 216, 0.08), transparent 35%), var(--bg);
+}
+
+html[data-theme="light"] .bg-grid {
+  opacity: 0.06;
+}
+
+html[data-theme="light"] .orb-a {
+  background: rgba(0, 216, 255, 0.10);
+}
+
+html[data-theme="light"] .orb-b {
+  background: rgba(255, 79, 216, 0.08);
+}
+
+html[data-theme="light"] .topbar {
+  background: rgba(240, 246, 255, 0.90);
+}
+
+html[data-theme="light"] .card,
+html[data-theme="light"] .exp-card,
+html[data-theme="light"] .faq-item,
+html[data-theme="light"] .for-whom-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(235, 243, 255, 0.90));
+}
+
+html[data-theme="light"] .pricing-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(235, 243, 255, 0.90));
+}
+
+html[data-theme="light"] .pricing-card.is-featured {
+  background: linear-gradient(145deg, rgba(0, 216, 255, 0.08), rgba(255, 79, 216, 0.05), rgba(235, 243, 255, 0.95));
+}
+
+html[data-theme="light"] .process {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+html[data-theme="light"] .step {
+  background: #ffffff;
+}
+
+html[data-theme="light"] .reviews-main,
+html[data-theme="light"] .client-portal,
+html[data-theme="light"] .reviews-panel {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(235, 243, 255, 0.90));
+}
+
+html[data-theme="light"] .review-highlight,
+html[data-theme="light"] .portal-step {
+  background: rgba(235, 243, 255, 0.70);
+}
+
+html[data-theme="light"] .review-card {
+  background: rgba(243, 248, 255, 0.88);
+}
+
+html[data-theme="light"] .session-card {
+  background: rgba(235, 243, 255, 0.72);
+}
+
+html[data-theme="light"] .portal-tab {
+  border-color: rgba(13, 30, 70, 0.18);
+  background: rgba(255, 255, 255, 0.70);
+  color: var(--muted);
+}
+
+html[data-theme="light"] .lang-switch {
+  background: rgba(235, 243, 255, 0.88);
+  border-color: rgba(13, 30, 70, 0.20);
+}
+
+html[data-theme="light"] .theme-btn {
+  border-color: rgba(13, 30, 70, 0.20);
+}
+
+html[data-theme="light"] .form-field input,
+html[data-theme="light"] .form-field select,
+html[data-theme="light"] .form-field textarea {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(13, 30, 70, 0.18);
+  color: var(--text);
+}
+
+html[data-theme="light"] .service-panel,
+html[data-theme="light"] .service-sidebar,
+html[data-theme="light"] .service-list,
+html[data-theme="light"] .service-related {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(235, 243, 255, 0.90));
+}
+
+html[data-theme="light"] .service-steps div,
+html[data-theme="light"] .service-highlight .mini-card {
+  background: rgba(235, 243, 255, 0.70);
+}
+
+html[data-theme="light"] .related-link {
+  background: rgba(235, 243, 255, 0.72);
+  color: var(--text);
+}
+
+html[data-theme="light"] .reviews-empty {
+  background: rgba(235, 243, 255, 0.52);
+}
+
+html[data-theme="light"] .lead-magnet {
+  background: linear-gradient(145deg, rgba(0, 216, 255, 0.06), rgba(235, 243, 255, 0.95));
+}
+
+html[data-theme="light"] .cta {
+  background: linear-gradient(145deg, rgba(0, 216, 255, 0.05), rgba(255, 79, 216, 0.05));
+}
+
+html[data-theme="light"] .social-link {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(235, 243, 255, 0.90));
+  border-color: rgba(13, 30, 70, 0.20);
+}
+
+html[data-theme="light"] .btn-outline {
+  border-color: rgba(13, 30, 70, 0.28);
+  color: var(--text);
+}
+
+html[data-theme="light"] .btn-secondary {
+  border-color: rgba(13, 30, 70, 0.28);
+  color: var(--text);
+}
+
+html[data-theme="light"] .brand-mark {
+  background: linear-gradient(140deg, rgba(235, 243, 255, 0.95), rgba(210, 228, 255, 0.95));
+  border-color: rgba(13, 30, 70, 0.20);
+}
+
+/* Smooth theme transition for always-visible elements */
+body,
+.topbar,
+.social-link,
+.form-field input,
+.form-field select,
+.form-field textarea {
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(16px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
+  transition: opacity 0.55s ease, transform 0.55s ease,
+    background 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .reveal.visible {
