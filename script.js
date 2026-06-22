@@ -287,7 +287,6 @@ const i18n = {
         li2: "Hardening Windows 10/11",
         li3: "Przewodnik wdrożenia MFA i menedżera haseł",
         li4: "Pisemny raport bezpieczeństwa (PDF)",
-        li5: "Konsultacja telefoniczna 30 min",
         cta: "Zamów teraz",
       },
       card2: {
@@ -315,11 +314,6 @@ const i18n = {
         cta: "Zacznij współpracę",
       },
       note: "Wszystkie ceny netto. Faktura VAT na życzenie. Możliwość płatności w PLN lub EUR wg kursu bieżącego.",
-    },
-    leadMagnet: {
-      title: "Bezpłatna checklista NIS2 dla Twojej firmy",
-      desc: "Sprawdź w 10 minut, czy Twoja firma spełnia kluczowe wymogi dyrektywy NIS2. Wyślij email i otrzymaj checklistę PDF.",
-      cta: "Pobierz bezpłatną checklistę",
     },
     contact: {
       title: "Potrzebujesz partnera od bezpieczeństwa?",
@@ -606,7 +600,6 @@ const i18n = {
         li2: "Windows 10/11 hardening",
         li3: "MFA and password manager setup guide",
         li4: "Written security report (PDF)",
-        li5: "30-min consultation call",
         cta: "Order now",
       },
       card2: {
@@ -634,11 +627,6 @@ const i18n = {
         cta: "Start collaboration",
       },
       note: "All prices exclusive of VAT. Invoice available on request.",
-    },
-    leadMagnet: {
-      title: "Free NIS2 compliance checklist for your business",
-      desc: "Check in 10 minutes whether your business meets the key NIS2 directive requirements. Send an email and receive the PDF checklist.",
-      cta: "Download free checklist",
     },
     contact: {
       title: "Need a trusted security partner?",
