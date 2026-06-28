@@ -127,13 +127,6 @@ const i18n = {
     },
     experience: {
       title: "Doświadczenie i kwalifikacje",
-      card1: {
-        title: "Podejście do współpracy",
-        desc: "Fundamentem pracy Fifth Ace jest doświadczenie w prowadzeniu złożonych projektów oraz konsekwentne podejście do ryzyka, jakości i zgodności z procedurami.",
-        li1: "Analiza problemu i szybkie wskazanie priorytetów",
-        li2: "Wysoka dbałość o szczegóły i standardy bezpieczeństwa",
-        li3: "Jasna komunikacja i skuteczne prowadzenie działań naprawczych",
-      },
       card2: {
         title: "Praktyka Fifth Ace",
         desc: "Realne wsparcie techniczne i bezpieczeństwo dla środowisk domowych i małych firm.",
@@ -142,13 +135,13 @@ const i18n = {
         li3: "Konfiguracja sieci i podstawowych ustawień zapory sieciowej",
       },
       card4: {
-        title: "Zakres kompetencji technicznych",
-        desc: "Usługi realizowane są w oparciu o praktyczne umiejętności techniczne i codzienną pracę z infrastrukturą użytkowników.",
-        li1: "Ocena ryzyka i identyfikacja podatności",
-        li2: "Konfiguracja systemów: Windows, Linux, macOS",
-        li3: "Diagnostyka usterek sprzętowych i systemowych",
-        li4: "Konfiguracja i zabezpieczanie sieci lokalnych",
-        li5: "Budowanie świadomości bezpieczeństwa w zespołach",
+        title: "Specjalizacje i narzędzia",
+        desc: "Testy penetracyjne, audyty i wsparcie techniczne realizowane z użyciem sprawdzonych narzędzi i metodyk.",
+        li1: "Testy penetracyjne sieci i aplikacji webowych",
+        li2: "Ocena podatności i analiza ryzyka (OWASP, NIST)",
+        li3: "Narzędzia: Nmap, Burp Suite, Metasploit, Wireshark, Kali Linux",
+        li4: "Audyt konfiguracji: Windows, Linux, sieci lokalne",
+        li5: "CompTIA A+ certified",
       },
     },
     reviews: {
@@ -417,13 +410,6 @@ const i18n = {
     },
     experience: {
       title: "Experience and qualifications",
-      card1: {
-        title: "How we work",
-        desc: "Fifth Ace is built on experience in complex project execution and a consistent approach to risk, quality, and procedural compliance.",
-        li1: "Problem analysis and fast prioritization",
-        li2: "Strong attention to detail and security standards",
-        li3: "Clear communication and effective remediation execution",
-      },
       card2: {
         title: "Fifth Ace practice",
         desc: "Hands-on technical support and security services for home and small business environments.",
@@ -432,13 +418,13 @@ const i18n = {
         li3: "Network setup and basic firewall configuration",
       },
       card4: {
-        title: "Technical capability scope",
-        desc: "Services are delivered using practical technical skills and daily work with end-user infrastructure.",
-        li1: "Risk assessment and vulnerability identification",
-        li2: "System configuration: Windows, Linux, macOS",
-        li3: "Hardware and system troubleshooting",
-        li4: "Local network configuration and protection",
-        li5: "Security awareness building for teams",
+        title: "Specialisations and tools",
+        desc: "Penetration testing, audits, and technical support delivered using proven tools and methodologies.",
+        li1: "Network and web application penetration testing",
+        li2: "Vulnerability assessment and risk analysis (OWASP, NIST)",
+        li3: "Tools: Nmap, Burp Suite, Metasploit, Wireshark, Kali Linux",
+        li4: "Configuration audit: Windows, Linux, local networks",
+        li5: "CompTIA A+ certified",
       },
     },
     reviews: {
