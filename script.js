@@ -23,7 +23,6 @@ const i18n = {
       services: "Usługi",
       guides: "Strefa usług",
       experience: "Doświadczenie",
-      process: "Proces",
       reviews: "Opinie",
       pricing: "Cennik",
       contact: "Kontakt",
@@ -142,14 +141,6 @@ const i18n = {
         li2: "Modernizacje sprzętu: RAM, SSD, serwis urządzeń",
         li3: "Konfiguracja sieci i podstawowych ustawień zapory sieciowej",
       },
-      card3: {
-        title: "Rozwój kompetencji bezpieczeństwa",
-        desc: "Stały rozwój praktyczny w obszarze ofensywnego i defensywnego bezpieczeństwa.",
-        li1: "Kali Linux i narzędzia: Nmap, Netdiscover, Bettercap, Wifite",
-        li2: "Monitoring sieci LAN i ocena podatności urządzeń",
-        li3: "Wsparcie OWASP: tłumaczenia dokumentacji LLM oraz Juice Shop na język polski",
-        li4Prefix: "Portfolio techniczne i laboratoria bezpieczeństwa:",
-      },
       card4: {
         title: "Zakres kompetencji technicznych",
         desc: "Usługi realizowane są w oparciu o praktyczne umiejętności techniczne i codzienną pracę z infrastrukturą użytkowników.",
@@ -158,21 +149,6 @@ const i18n = {
         li3: "Diagnostyka usterek sprzętowych i systemowych",
         li4: "Konfiguracja i zabezpieczanie sieci lokalnych",
         li5: "Budowanie świadomości bezpieczeństwa w zespołach",
-      },
-    },
-    process: {
-      title: "Jak pracujemy",
-      step1: {
-        title: "Diagnoza",
-        desc: "Dzień 1: Wywiad wstępny, rozpoznanie środowiska IT i priorytetów biznesowych. Ustalenie zakresu prac.",
-      },
-      step2: {
-        title: "Test i analiza",
-        desc: "Dni 2–4: Skanowanie podatności, testy penetracyjne, ocena ryzyka i wpływu na organizację.",
-      },
-      step3: {
-        title: "Raport i wdrożenie",
-        desc: "Dzień 5: Raport PDF z priorytetami. Debriefing, wsparcie wdrożeniowe i retest po poprawkach.",
       },
     },
     reviews: {
@@ -337,7 +313,6 @@ const i18n = {
       services: "Services",
       guides: "Service pages",
       experience: "Experience",
-      process: "Process",
       reviews: "Reviews",
       pricing: "Pricing",
       contact: "Contact",
@@ -456,14 +431,6 @@ const i18n = {
         li2: "Hardware upgrades: RAM, SSD, and device servicing",
         li3: "Network setup and basic firewall configuration",
       },
-      card3: {
-        title: "Security skills development",
-        desc: "Continuous practical growth in offensive and defensive security.",
-        li1: "Kali Linux tools: Nmap, Netdiscover, Bettercap, Wifite",
-        li2: "LAN monitoring and device vulnerability assessment",
-        li3: "OWASP support: translating LLM and Juice Shop documentation into Polish",
-        li4Prefix: "Technical portfolio and security labs:",
-      },
       card4: {
         title: "Technical capability scope",
         desc: "Services are delivered using practical technical skills and daily work with end-user infrastructure.",
@@ -472,21 +439,6 @@ const i18n = {
         li3: "Hardware and system troubleshooting",
         li4: "Local network configuration and protection",
         li5: "Security awareness building for teams",
-      },
-    },
-    process: {
-      title: "How we work",
-      step1: {
-        title: "Discovery",
-        desc: "Day 1: Intake call, environment review, and business priority mapping. Scope is agreed before any work begins.",
-      },
-      step2: {
-        title: "Testing and analysis",
-        desc: "Days 2–4: Vulnerability scanning, penetration testing, risk assessment, and organisational impact mapping.",
-      },
-      step3: {
-        title: "Report and implementation",
-        desc: "Day 5: PDF report with prioritised findings. Debrief call, remediation support, and re-test confirmation.",
       },
     },
     reviews: {
