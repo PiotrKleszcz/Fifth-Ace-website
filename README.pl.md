@@ -87,6 +87,6 @@ Ta wersja nadaje się do **GitHub Pages**. Repozytorium zawiera już plik `.noje
 
 ## Kontakt
 
-- e-mail: `fifthace@gmx.com`
+- e-mail: `hello@fifthace.net`
 - YouTube: [@FifthAce-sec](https://www.youtube.com/@FifthAce-sec)
 - Instagram: [fifthace.sec](https://www.instagram.com/fifthace.sec/)
