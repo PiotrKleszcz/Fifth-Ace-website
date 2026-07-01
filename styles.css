@@ -315,6 +315,10 @@ h1 {
   color: #c7d9f4;
 }
 
+.section-intro--muted {
+  color: #7a9bbf;
+}
+
 .hero-cta {
   display: flex;
   gap: 12px;
